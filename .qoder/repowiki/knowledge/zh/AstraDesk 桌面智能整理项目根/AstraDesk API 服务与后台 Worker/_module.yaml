@@ -1,0 +1,10 @@
+schema_version: 1
+module_path: services
+title: AstraDesk API 服务与后台 Worker
+scope:
+    - services/
+source_files: []
+depends_on: []
+related_to:
+    - path: artifacts
+    - path: tests

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://astradesk.local/contracts/detection_result.schema.json",
+  "title": "DetectionJobResult",
+  "description": "检测任务查询结果（GET /api/v1/jobs/{id}）。坐标遵循 PRD 5.2：bbox_image=[x1,y1,x2,y2] 归一化 0-1，左上原点。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "project_id", "type", "status", "detections"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "project_id": { "type": "string", "minLength": 1 },
+    "type": { "const": "detect" },
+    "status": { "enum": ["queued", "running", "succeeded", "partial", "failed", "cancelled"] },
+    "stage": { "type": ["string", "null"] },
+    "attempt": { "type": "integer", "minimum": 1 },
+    "result": {
+      "type": ["object", "null"],
+      "description": "真实运行元信息（模型/设备/耗时），mock 模式显式标注 run_mode=mock。",
+      "properties": {
+        "model_name": { "type": "string" },
+        "model_version": { "type": "string" },
+        "run_mode": { "enum": ["real", "mock"] },
+        "device": { "type": "string" },
+        "elapsed_seconds": { "type": "number", "minimum": 0 },
+        "image_width": { "type": "integer", "minimum": 0 },
+        "image_height": { "type": "integer", "minimum": 0 },
+        "count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "detections": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/detection" }
+    },
+    "error": {
+      "oneOf": [
+        { "type": "null" },
+        { "$ref": "https://astradesk.local/contracts/error.schema.json" }
+      ]
+    },
+    "created_at": { "type": ["string", "null"] },
+    "updated_at": { "type": ["string", "null"] }
+  },
+  "$defs": {
+    "bbox_image": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": { "type": "number", "minimum": 0, "maximum": 1 },
+      "description": "[x1,y1,x2,y2] 归一化，左上原点，x 向右 y 向下。"
+    },
+    "detection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "class_id", "class_name", "confidence", "bbox_image"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "class_id": {
+          "enum": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+          "description": "产品类索引(version 2)：0 laptop,1 monitor,2 keyboard,3 mouse,4 mobile_phone,5 book,6 pen,7 cup,8 thermos_cup,9 plastic_cup,10 disposable_cup,11 bottle,12 plastic_bottle,13 squeeze_bottle,14 can,15 waterpot,16 cable,17 charger,18 tissue,19 paper,20 lamp,21 headphones,22 mouse_pad,23 other(兜底,不参训)。"
+        },
+        "class_name": {
+          "enum": ["laptop", "monitor", "keyboard", "mouse", "mobile_phone", "book", "pen", "cup", "thermos_cup", "plastic_cup", "disposable_cup", "bottle", "plastic_bottle", "squeeze_bottle", "can", "waterpot", "cable", "charger", "tissue", "paper", "lamp", "headphones", "mouse_pad", "other"]
+        },
+        "confidence": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "bbox_image": { "$ref": "#/$defs/bbox_image" },
+        "source": { "type": ["string", "null"], "description": "检测来源，FR03 可追溯：yolov10:<权重stem> / yolo-world / manual / mock。" },
+        "raw_class_name": { "type": ["string", "null"], "description": "开放词表映射前的原始提示词名(如 lamp/speaker/tissue)，FR03 原始类可追溯；主检测与映射后同名时为 null。" }
+      }
+    }
+  }
+}

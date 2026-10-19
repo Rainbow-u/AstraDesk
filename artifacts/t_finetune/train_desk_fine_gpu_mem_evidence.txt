@@ -1,0 +1,34 @@
+desk_fine (23 训练类, version 2) 6GB 显存可行性证据 — A4 小批量试跑
+=================================================================
+设备: NVIDIA GeForce RTX 4050 Laptop GPU, 6140 MiB total
+起始权重: weights/yolov10n.pt (COCO 80 类) -> 检测头重构为 nc=23
+数据: data/desk_fine/data_fine.yaml (train 1549 / val 97, nc=23)
+配置: imgsz=640 batch=8 device=0 amp=True patience=20 workers=4
+增强: mosaic=1.0 mixup=0.3 copy_paste=0.1 hsv(h0.015/s0.7/v0.4) degrees=15 scale=0.5 fliplr=0.5 seed=42
+
+试跑 (ASTRADESK_EPOCHS=2 ASTRADESK_TRIAL=1):
+- 结果: TRIAL_DONE epochs=2 elapsed_s=204.5 (含一次性 AMP 校验下载 yolo26n.pt ~110s), TRIAL_EXIT=0
+- 模型头: "23 ultralytics.nn.modules.head.v10Detect [23, [64,128,256]]"
+- 权重迁移: "Remapped 6/23 cls head rows from pretrained weights by class name" / "Transferred 595/595 items"
+  (COCO 与 desk 词表仅 6 类同名，其余 17 类检测头随机初始化 -> 属预期的迁移学习)
+- 训练循环: 194 iter/epoch @ ~9.5 it/s, ~20.4s/epoch; loss 正常下降 (box~1.52 cls~3.15 dfl~1.41)
+
+显存实测 (关键结论):
+- ultralytics 自报 GPU_mem (训练进程): 稳定 1.82G, 峰值 1.84G
+- nvidia-smi 全卡 memory.used 采样峰值: 3600 MiB (含另一常驻进程基线 ~1533 MiB; 训练净增 ~2.0G)
+- 采样: 每 2s 一次, 共 102 个有效样本 (覆盖模型加载/AMP校验/2个训练epoch)
+- 结论: 23 类头显存峰值 ~1.84G, 全卡占用峰值 3600 MiB << 6140 MiB, 6GB 显存充裕 (余量 ~2.5G)
+
+对照 Phase 1 (desk9, 9 类): GPU 显存峰值 1.91G。23 类头相较 9 类头显存增量极小 (检测头参数占比低),
+实测反而略低 (1.84G), 与"24 类头增量小、预期仍 <2.5G"的判断一致。
+
+正式重训: 100 epochs, patience=20 早停, 从 yolov10n.pt(COCO) 迁移 (不从 desk9 续训, 因类数变更检测头重构)。
+后台运行日志: /tmp/train_desk_fine.log; 产物 weights/yolov10_desk_fine.pt;
+报告 artifacts/t_finetune/train_report_desk_fine.json (训练完成后生成)。
+预期耗时: Phase 1 desk9 100ep 为 4023s(~67min); desk_fine 单 epoch ~20.4s(训练)+val, 预计 40-70min (早停可能更短)。
+
+正式重训结果 (100 epochs 跑满, 未触发早停):
+- 实测耗时 3407.1s (~56.8min, 0.939h); 全程峰值 GPU_mem 2.01G(十进制, epoch 24 起稳定) ≈ 1.87 GiB << 6GB, 无 OOM。
+- 最终 all 指标: images=97 instances=905 P=0.857 R=0.670 mAP50=0.746 mAP50-95=0.555 (与 train_report_desk_fine.json 一致)。
+- 全量训练逐 epoch GPU_mem 峰值提取证据(自包含, 由 artifacts/extract_train_gpumem.py 从 /tmp/train_desk_fine.log 生成):
+  artifacts/t_finetune/train_desk_fine_full_gpu_mem_evidence.txt (原始 *.log 已 gitignore, 仅本地可复现)。

@@ -1,0 +1,79 @@
+# 版本化类别映射：YOLO-DeskDataset(80 类) -> 产品 23 具体类(训练用, 索引 0-22) + other(索引 23, 不参训)
+# version 2：在 version 1(9 类)基础上做类别细化——杯/瓶拆分、other 高频物转正。
+# 变更须记入 docs/DECISIONS.md(D011)。原始 80 类 id 在训练旁挂 labels_raw/ 中保留，保证 FR03 可追溯。
+#
+# 转正阈值规则(延续 docs/DATASET.md §7)：
+#   - 样本≥300 且属桌面整理高频相关物 -> 独立训练类；
+#   - 样本 150–300 -> 候选池(本轮暂归 other，视 A 阶段评测再定纳入)；
+#   - 样本<50(死类/极稀有) -> 归 other(不参训)。
+version: 2
+dataset: YOLO-DeskDataset
+dataset_sha: e53dc4af4f537c5134c9d9045a76854ee1b9fda4
+
+# 训练类别索引 -> 产品类名（PRD 5.1 词表已扩展；索引 23 other 为兜底，不参训）
+product_classes:
+  # 保留（非杯瓶原产品类，7）
+  0: laptop
+  1: monitor
+  2: keyboard
+  3: mouse
+  4: mobile_phone
+  5: book
+  6: pen
+  # 杯细分（原 cup 拆 4，样本量括注）
+  7: cup               # 普通/马克杯(806)
+  8: thermos_cup       # 保温杯(562)
+  9: plastic_cup       # 塑料杯(210)
+  10: disposable_cup   # 一次性杯(140)
+  # 瓶罐细分（原 bottle 拆 5）
+  11: bottle           # 普通瓶(735)
+  12: plastic_bottle   # 塑料瓶(479)
+  13: squeeze_bottle   # 挤压瓶(265)
+  14: can              # 易拉罐(154)
+  15: waterpot         # 水壶(140)
+  # other 高频物转正（样本≥300 且桌面整理强相关，7）
+  16: cable            # 数据线(1272)
+  17: charger          # 充电器(744)
+  18: tissue           # 纸巾(898)
+  19: paper            # 纸张(674)
+  20: lamp             # 台灯(427)
+  21: headphones       # 耳机(412)
+  22: mouse_pad        # 鼠标垫(309)
+  # 兜底（不参训；开放词表+人工补框 FR04 覆盖）
+  23: other
+
+# dataset class_id -> 产品类索引（含杯瓶细分与转正类）
+dataset_to_product:
+  8: 0     # laptop
+  11: 1    # monitor
+  10: 2    # keyboard
+  9: 3     # mouse
+  14: 4    # mobile phone
+  18: 5    # book
+  0: 6     # pen
+  20: 7    # cup（普通/马克杯）
+  21: 8    # thermos cup -> thermos_cup
+  22: 9    # plastic cup -> plastic_cup
+  34: 10   # disposable cup -> disposable_cup
+  72: 11   # bottle（普通瓶）
+  32: 12   # plastic bottle -> plastic_bottle
+  79: 13   # squeeze bottle -> squeeze_bottle
+  33: 14   # can -> can
+  55: 15   # waterpot -> waterpot
+  17: 16   # cable -> cable（转正）
+  16: 17   # charger -> charger（转正）
+  42: 18   # tissue -> tissue（转正）
+  39: 19   # paper -> paper（转正；散页纸张，非书本）
+  56: 20   # lamp -> lamp（转正）
+  12: 21   # headphones -> headphones（转正）
+  27: 22   # mouse pad -> mouse_pad（转正）
+
+notes:
+  - "version 2 细化(D011)：cup 拆为 cup/thermos_cup/plastic_cup/disposable_cup；bottle 拆为 bottle/plastic_bottle/squeeze_bottle/can/waterpot；cable/charger/tissue/paper/lamp/headphones/mouse_pad 由 other 转正为独立类。细分与转正所需标注在原始 80 类中已现成，零标注成本。"
+  - "computer(7) 经目视抽查为台式机机箱/主机(白色机箱+木纹侧板+前置USB)，非显示器，不并入 monitor，归 other。证据: artifacts/_tmp_class7/。"
+  - "document(19) 语义为散页文档(样本 93<150)，暂归 other 候选池；paper(39,674) 已转正为独立类。"
+  - "pencil case(61)/phone holder(67)/tablet(15)/earphones(13)/speaker(76)/fan(52)/eraser(1)/gamepad(78)/box(31)/carton(30)/waste paperball(40) 属候选池(样本 150–300 或桌面相关性待定)，本轮归 other，视 A 阶段评测再决定纳入。"
+  - "未列入 dataset_to_product 的 class_id 一律归 other(索引 23，不参训)，由开放词表+人工补框(FR04)覆盖。"
+  - "0 样本死类(5,29,35-38,45-48,54,60,62 等)与极稀有类(<50)不单独训练。"
+  - "标签 class_id 存在整数/浮点混写(如 8 与 8.0)，读取时统一 int(float(x))。"
+  - "长尾/类间混淆风险：细杯型(cup vs thermos_cup)、瓶罐(bottle vs plastic_bottle)视觉相近可能互混；类别不平衡(cable 1272 vs disposable_cup/waterpot 140)可能偏向高频类。A 阶段评测如实报每类 P/R 与混淆，不面向 val 调参。"

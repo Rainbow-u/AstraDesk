@@ -1,0 +1,23 @@
+{
+  "model": "yolov10_desk9",
+  "start_weights": "/mnt/d/AstraDesk/weights/yolov10n.pt",
+  "dataset": "data/desk9 (remapped YOLO-DeskDataset, 9 product classes)",
+  "train_images": 1490,
+  "val_images": 93,
+  "epochs": 100,
+  "imgsz": 640,
+  "batch": 8,
+  "device": 0,
+  "amp": true,
+  "patience": 20,
+  "augmentation": "mosaic=1.0 mixup=0.3 hsv degrees=15 scale=0.5 fliplr=0.5",
+  "elapsed_seconds": 4023.5,
+  "metrics": {
+    "metrics/precision(B)": 0.9296785604014245,
+    "metrics/recall(B)": 0.7949757035052888,
+    "metrics/mAP50(B)": 0.8478947554344614,
+    "metrics/mAP50-95(B)": 0.6501693082130752,
+    "fitness": 0.6501693082130752
+  },
+  "best_weights": "/mnt/d/AstraDesk/weights/yolov10_desk9.pt"
+}

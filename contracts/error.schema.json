@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://astradesk.local/contracts/error.schema.json",
+  "title": "ErrorBody",
+  "description": "统一错误对象（PRD 8.3）。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["code", "message", "retryable", "request_id"],
+  "properties": {
+    "code": {
+      "type": "string",
+      "enum": [
+        "INVALID_IMAGE", "TOO_MANY_OBJECTS", "MODEL_UNAVAILABLE", "SCHEMA_INVALID",
+        "NO_FEASIBLE_LAYOUT", "STALE_REVISION", "GENERATION_TIMEOUT", "BUDGET_EXCEEDED",
+        "PROJECT_NOT_FOUND", "ASSET_NOT_FOUND", "JOB_NOT_FOUND", "INTERNAL"
+      ]
+    },
+    "message": { "type": "string" },
+    "details": { "type": ["object", "null"] },
+    "retryable": { "type": "boolean" },
+    "request_id": { "type": "string" }
+  }
+}

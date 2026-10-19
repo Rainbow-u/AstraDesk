@@ -1,0 +1,7 @@
+{
+  "code": "MODEL_UNAVAILABLE",
+  "message": "weights not found: weights/yolov10n.pt",
+  "details": null,
+  "retryable": false,
+  "request_id": "req_abc123"
+}

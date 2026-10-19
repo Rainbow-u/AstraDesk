@@ -1,0 +1,8 @@
+schema_version: 1
+module_path: docs
+title: 桌面智能整理项目文档集
+scope:
+    - docs/
+source_files: []
+depends_on: []
+related_to: []

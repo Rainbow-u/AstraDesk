@@ -1,0 +1,146 @@
+{
+  "val_images": 93,
+  "conf": 0.25,
+  "iou": 0.5,
+  "caveats": [
+    "val 仅 93 图",
+    "数据集干净桌面偏置",
+    "含增强重复、无会话分组、可能泄漏，数字仅供相对比较"
+  ],
+  "finetuned_map": {
+    "mAP50": 0.8481869927322514,
+    "mAP50-95": 0.6496155685135235,
+    "precision": 0.9286387547168622,
+    "recall": 0.7973057336210251
+  },
+  "finetuned_per_class": {
+    "laptop": {
+      "precision": 0.952,
+      "recall": 0.894,
+      "tp": 59,
+      "fp": 3,
+      "fn": 7
+    },
+    "monitor": {
+      "precision": 0.963,
+      "recall": 0.929,
+      "tp": 26,
+      "fp": 1,
+      "fn": 2
+    },
+    "keyboard": {
+      "precision": 0.885,
+      "recall": 0.939,
+      "tp": 46,
+      "fp": 6,
+      "fn": 3
+    },
+    "mouse": {
+      "precision": 0.954,
+      "recall": 0.925,
+      "tp": 62,
+      "fp": 3,
+      "fn": 5
+    },
+    "book": {
+      "precision": 0.8,
+      "recall": 0.732,
+      "tp": 52,
+      "fp": 13,
+      "fn": 19
+    },
+    "pen": {
+      "precision": 0.852,
+      "recall": 0.793,
+      "tp": 23,
+      "fp": 4,
+      "fn": 6
+    },
+    "cup": {
+      "precision": 0.84,
+      "recall": 0.815,
+      "tp": 110,
+      "fp": 21,
+      "fn": 25
+    },
+    "bottle": {
+      "precision": 0.686,
+      "recall": 0.637,
+      "tp": 72,
+      "fp": 33,
+      "fn": 41
+    },
+    "mobile_phone": {
+      "precision": 1.0,
+      "recall": 0.625,
+      "tp": 10,
+      "fp": 0,
+      "fn": 6
+    }
+  },
+  "baseline_coco_per_class": {
+    "laptop": {
+      "precision": 0.75,
+      "recall": 0.591,
+      "tp": 39,
+      "fp": 13,
+      "fn": 27
+    },
+    "monitor": {
+      "precision": 0.545,
+      "recall": 0.643,
+      "tp": 18,
+      "fp": 15,
+      "fn": 10
+    },
+    "keyboard": {
+      "precision": 0.698,
+      "recall": 0.755,
+      "tp": 37,
+      "fp": 16,
+      "fn": 12
+    },
+    "mouse": {
+      "precision": 0.696,
+      "recall": 0.716,
+      "tp": 48,
+      "fp": 21,
+      "fn": 19
+    },
+    "book": {
+      "precision": 0.275,
+      "recall": 0.155,
+      "tp": 11,
+      "fp": 29,
+      "fn": 60
+    },
+    "pen": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 29
+    },
+    "cup": {
+      "precision": 0.556,
+      "recall": 0.222,
+      "tp": 30,
+      "fp": 24,
+      "fn": 105
+    },
+    "bottle": {
+      "precision": 0.443,
+      "recall": 0.31,
+      "tp": 35,
+      "fp": 44,
+      "fn": 78
+    },
+    "mobile_phone": {
+      "precision": 0.333,
+      "recall": 0.125,
+      "tp": 2,
+      "fp": 4,
+      "fn": 14
+    }
+  }
+}

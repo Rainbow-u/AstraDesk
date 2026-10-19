@@ -1,0 +1,255 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Microsoft YaHei", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #12151c;
+  color: #e6e8ee;
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.caps {
+  font-size: 13px;
+  color: #9aa3b2;
+}
+
+.toolbar {
+  margin: 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hint {
+  color: #9aa3b2;
+  font-size: 13px;
+}
+
+.error {
+  background: #3a1d1d;
+  border: 1px solid #ff5050;
+  color: #ffb4b4;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+.stage {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 16px;
+  align-items: start;
+}
+
+.canvas {
+  position: relative;
+  background: #0b0d12;
+  border-radius: 8px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.canvas img {
+  width: 100%;
+  display: block;
+}
+
+.placeholder {
+  padding: 60px 20px;
+  text-align: center;
+  color: #6b7280;
+  background: #0b0d12;
+  border-radius: 8px;
+}
+
+.box {
+  position: absolute;
+  border: 2px solid #ff5050;
+  box-sizing: border-box;
+}
+
+.tag {
+  position: absolute;
+  top: -18px;
+  left: -2px;
+  font-size: 11px;
+  line-height: 16px;
+  padding: 0 4px;
+  color: #12151c;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.panel {
+  background: #171b24;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.panel h2 {
+  font-size: 15px;
+  margin: 0 0 8px;
+}
+
+.meta {
+  font-size: 12px;
+  color: #9aa3b2;
+  margin: 0 0 8px;
+}
+
+.panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.panel li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  padding: 4px 0;
+  border-bottom: 1px solid #232833;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.conf {
+  margin-left: auto;
+  color: #9aa3b2;
+  font-variant-numeric: tabular-nums;
+}
+
+.src {
+  font-size: 10px;
+  color: #6b7280;
+  border: 1px solid #2b3240;
+  border-radius: 3px;
+  padding: 0 4px;
+  line-height: 15px;
+  max-width: 110px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.raw {
+  font-size: 11px;
+  color: #8b93a3;
+  font-style: italic;
+}
+
+.scene {
+  margin-top: 16px;
+  border-top: 1px solid #232833;
+  padding-top: 10px;
+}
+
+.scene h2 {
+  font-size: 15px;
+  margin: 0 0 8px;
+}
+
+.scene .summary {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0 0 8px;
+}
+
+.scene .dims {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+}
+
+.scene .dims li {
+  display: block;
+  border-bottom: 1px solid #232833;
+  padding: 5px 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #c7ccd6;
+}
+
+.scene .dims li b {
+  color: #e6e8ee;
+}
+
+.scene .warn {
+  background: #3a2f1d;
+  border: 1px solid #ffb020;
+  color: #ffdca8;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.scene .warn p {
+  margin: 2px 0;
+}
+
+.scene details {
+  font-size: 12px;
+  color: #9aa3b2;
+}
+
+.scene-text {
+  white-space: pre-wrap;
+  background: #0b0d12;
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin: 6px 0 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #c7ccd6;
+}
+
+/* 物体属性（Phase 4 阶段 B）：颜色色块 + 几何/颜色标签 */
+.attrs .swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  border: 1px solid #2b3240;
+  display: inline-block;
+  flex: 0 0 auto;
+}
+
+.attrs .attr {
+  font-size: 11px;
+  color: #9aa3b2;
+  border: 1px solid #2b3240;
+  border-radius: 3px;
+  padding: 0 5px;
+  line-height: 16px;
+}

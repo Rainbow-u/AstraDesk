@@ -1,0 +1,419 @@
+{
+  "image": "img (1).jpg",
+  "weights": "yolov8s-world.pt",
+  "weights_bytes": 27169314,
+  "primary_weights": "yolov10_desk9.pt",
+  "primary_is_synthetic": false,
+  "device": "0",
+  "conf": 0.15,
+  "primary_model": {
+    "name": "yolov10_desk9",
+    "version": "yolov10_desk9.pt",
+    "run_mode": "real"
+  },
+  "primary_count": 2,
+  "primary": [
+    {
+      "class_id": 0,
+      "class_name": "laptop",
+      "confidence": 0.9338,
+      "source": "yolov10:yolov10_desk9"
+    },
+    {
+      "class_id": 4,
+      "class_name": "book",
+      "confidence": 0.8045,
+      "source": "yolov10:yolov10_desk9"
+    }
+  ],
+  "open_vocab_model": {
+    "name": "yolo-world",
+    "version": "yolov8s-world.pt"
+  },
+  "open_vocab_raw_count": 22,
+  "open_vocab_raw": [
+    {
+      "class_name": "laptop",
+      "confidence": 0.9478,
+      "source": "yolo-world"
+    },
+    {
+      "class_name": "mouse",
+      "confidence": 0.8894,
+      "source": "yolo-world"
+    },
+    {
+      "class_name": "pen",
+      "confidence": 0.5101,
+      "source": "yolo-world"
+    },
+    {
+      "class_name": "bottle",
+      "confidence": 0.4572,
+      "source": "yolo-world"
+    },
+    {
+      "class_name": "lamp",
+      "confidence": 0.4201,
+      "source": "yolo-world"
+    },
+    {
+      "class_name": "power bank",
+      "confidence": 0.4193,
+      "source": "yolo-world"
+    },
+    {
+      "class_name": "cup",
+      "confidence": 0.3725,
+      "source": "yolo-world"
+    },
+    {
+      "class_name": "cup",
+      "confidence": 0.3649,
+      "source": "yolo-world"
+    },
+    {
+      "class_name": "bottle",
+      "confidence": 0.3261,
+      "source": "yolo-world"
+    },
+    {
+      "class_name": "lamp",
+      "confidence": 0.3138,
+      "source": "yolo-world"
+    },
+    {
+      "class_name": "bottle",
+      "confidence": 0.3002,
+      "source": "yolo-world"
+    },
+    {
+      "class_name": "speaker",
+      "confidence": 0.2509,
+      "source": "yolo-world"
+    },
+    {
+      "class_name": "mouse",
+      "confidence": 0.2396,
+      "source": "yolo-world"
+    },
+    {
+      "class_name": "bottle",
+      "confidence": 0.2312,
+      "source": "yolo-world"
+    },
+    {
+      "class_name": "tissue",
+      "confidence": 0.2134,
+      "source": "yolo-world"
+    },
+    {
+      "class_name": "book",
+      "confidence": 0.2065,
+      "source": "yolo-world"
+    },
+    {
+      "class_name": "book",
+      "confidence": 0.1956,
+      "source": "yolo-world"
+    },
+    {
+      "class_name": "book",
+      "confidence": 0.1754,
+      "source": "yolo-world"
+    },
+    {
+      "class_name": "book",
+      "confidence": 0.1728,
+      "source": "yolo-world"
+    },
+    {
+      "class_name": "book",
+      "confidence": 0.1603,
+      "source": "yolo-world"
+    },
+    {
+      "class_name": "bottle",
+      "confidence": 0.1517,
+      "source": "yolo-world"
+    },
+    {
+      "class_name": "cup",
+      "confidence": 0.1503,
+      "source": "yolo-world"
+    }
+  ],
+  "fused_count": 20,
+  "fused": [
+    {
+      "class_id": 0,
+      "class_name": "laptop",
+      "raw_class_name": null,
+      "confidence": 0.9338,
+      "source": "yolov10:yolov10_desk9"
+    },
+    {
+      "class_id": 4,
+      "class_name": "book",
+      "raw_class_name": null,
+      "confidence": 0.8045,
+      "source": "yolov10:yolov10_desk9"
+    },
+    {
+      "class_id": 3,
+      "class_name": "mouse",
+      "raw_class_name": "mouse",
+      "confidence": 0.8894,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 5,
+      "class_name": "pen",
+      "raw_class_name": "pen",
+      "confidence": 0.5101,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 7,
+      "class_name": "bottle",
+      "raw_class_name": "bottle",
+      "confidence": 0.4572,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 9,
+      "class_name": "other",
+      "raw_class_name": "lamp",
+      "confidence": 0.4201,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 9,
+      "class_name": "other",
+      "raw_class_name": "power bank",
+      "confidence": 0.4193,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 6,
+      "class_name": "cup",
+      "raw_class_name": "cup",
+      "confidence": 0.3725,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 6,
+      "class_name": "cup",
+      "raw_class_name": "cup",
+      "confidence": 0.3649,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 7,
+      "class_name": "bottle",
+      "raw_class_name": "bottle",
+      "confidence": 0.3261,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 9,
+      "class_name": "other",
+      "raw_class_name": "lamp",
+      "confidence": 0.3138,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 7,
+      "class_name": "bottle",
+      "raw_class_name": "bottle",
+      "confidence": 0.3002,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 3,
+      "class_name": "mouse",
+      "raw_class_name": "mouse",
+      "confidence": 0.2396,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 7,
+      "class_name": "bottle",
+      "raw_class_name": "bottle",
+      "confidence": 0.2312,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 9,
+      "class_name": "other",
+      "raw_class_name": "tissue",
+      "confidence": 0.2134,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 4,
+      "class_name": "book",
+      "raw_class_name": "book",
+      "confidence": 0.2065,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 4,
+      "class_name": "book",
+      "raw_class_name": "book",
+      "confidence": 0.1956,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 4,
+      "class_name": "book",
+      "raw_class_name": "book",
+      "confidence": 0.1754,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 4,
+      "class_name": "book",
+      "raw_class_name": "book",
+      "confidence": 0.1728,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 7,
+      "class_name": "bottle",
+      "raw_class_name": "bottle",
+      "confidence": 0.1517,
+      "source": "yolo-world"
+    }
+  ],
+  "added_by_openvocab": [
+    {
+      "class_id": 3,
+      "class_name": "mouse",
+      "raw_class_name": "mouse",
+      "confidence": 0.8894,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 5,
+      "class_name": "pen",
+      "raw_class_name": "pen",
+      "confidence": 0.5101,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 7,
+      "class_name": "bottle",
+      "raw_class_name": "bottle",
+      "confidence": 0.4572,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 9,
+      "class_name": "other",
+      "raw_class_name": "lamp",
+      "confidence": 0.4201,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 9,
+      "class_name": "other",
+      "raw_class_name": "power bank",
+      "confidence": 0.4193,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 6,
+      "class_name": "cup",
+      "raw_class_name": "cup",
+      "confidence": 0.3725,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 6,
+      "class_name": "cup",
+      "raw_class_name": "cup",
+      "confidence": 0.3649,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 7,
+      "class_name": "bottle",
+      "raw_class_name": "bottle",
+      "confidence": 0.3261,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 9,
+      "class_name": "other",
+      "raw_class_name": "lamp",
+      "confidence": 0.3138,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 7,
+      "class_name": "bottle",
+      "raw_class_name": "bottle",
+      "confidence": 0.3002,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 3,
+      "class_name": "mouse",
+      "raw_class_name": "mouse",
+      "confidence": 0.2396,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 7,
+      "class_name": "bottle",
+      "raw_class_name": "bottle",
+      "confidence": 0.2312,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 9,
+      "class_name": "other",
+      "raw_class_name": "tissue",
+      "confidence": 0.2134,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 4,
+      "class_name": "book",
+      "raw_class_name": "book",
+      "confidence": 0.2065,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 4,
+      "class_name": "book",
+      "raw_class_name": "book",
+      "confidence": 0.1956,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 4,
+      "class_name": "book",
+      "raw_class_name": "book",
+      "confidence": 0.1754,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 4,
+      "class_name": "book",
+      "raw_class_name": "book",
+      "confidence": 0.1728,
+      "source": "yolo-world"
+    },
+    {
+      "class_id": 7,
+      "class_name": "bottle",
+      "raw_class_name": "bottle",
+      "confidence": 0.1517,
+      "source": "yolo-world"
+    }
+  ],
+  "elapsed_seconds": 9.189,
+  "elapsed_fused_incl_load": 9.191
+}

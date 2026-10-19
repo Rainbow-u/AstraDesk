@@ -1,0 +1,22 @@
+{
+  "relations": [
+    {
+      "subject_id": "obj-1",
+      "predicate": "near",
+      "object_id": "obj-2",
+      "evidence": "zone proximity derived from scene_facts partitions"
+    },
+    {
+      "subject_id": "obj-3",
+      "predicate": "left_of",
+      "object_id": "obj-1"
+    },
+    {
+      "subject_id": "obj-2",
+      "predicate": "grouped_with",
+      "object_id": "obj-4",
+      "evidence": "same functional cluster in scene_facts.groups"
+    }
+  ],
+  "explanation": "笔记本电脑(obj-1)靠近杯子(obj-2)；键盘(obj-3)在笔记本左侧；杯子与书本(obj-4)属同一功能组。所有 subject_id/object_id 均引用既有实例，未改写事实清单(H01)。"
+}

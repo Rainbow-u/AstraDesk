@@ -1,0 +1,103 @@
+{
+  "task": "T01_detection_verification",
+  "model_file": "yolov10n.pt",
+  "model_class": "YOLOv10n (ultralytics)",
+  "pretrained_on": "COCO (80 classes) - not YOLO-DeskDataset desk classes",
+  "device": "cuda:0",
+  "torch_version": "2.6.0+cu124",
+  "python": "3.12.3",
+  "image": "img (1).jpg",
+  "image_size_wh": [
+    1441,
+    1080
+  ],
+  "num_detections": 7,
+  "num_classes_available": 80,
+  "inference_seconds_first_call_incl_load": 2.27,
+  "detections": [
+    {
+      "class_id": 63,
+      "class_name": "laptop",
+      "confidence": 0.9399,
+      "bbox_xyxy_px": [
+        303.4,
+        677.2,
+        676.3,
+        980.4
+      ]
+    },
+    {
+      "class_id": 64,
+      "class_name": "mouse",
+      "confidence": 0.8941,
+      "bbox_xyxy_px": [
+        921.8,
+        950.6,
+        1007.8,
+        1013.0
+      ]
+    },
+    {
+      "class_id": 39,
+      "class_name": "bottle",
+      "confidence": 0.4104,
+      "bbox_xyxy_px": [
+        1185.7,
+        633.6,
+        1270.0,
+        823.5
+      ]
+    },
+    {
+      "class_id": 77,
+      "class_name": "teddy bear",
+      "confidence": 0.3674,
+      "bbox_xyxy_px": [
+        598.4,
+        330.6,
+        770.0,
+        520.9
+      ]
+    },
+    {
+      "class_id": 77,
+      "class_name": "teddy bear",
+      "confidence": 0.2721,
+      "bbox_xyxy_px": [
+        304.7,
+        149.8,
+        435.5,
+        301.7
+      ]
+    },
+    {
+      "class_id": 39,
+      "class_name": "bottle",
+      "confidence": 0.2534,
+      "bbox_xyxy_px": [
+        1087.4,
+        399.6,
+        1123.3,
+        517.3
+      ]
+    },
+    {
+      "class_id": 73,
+      "class_name": "book",
+      "confidence": 0.2519,
+      "bbox_xyxy_px": [
+        856.5,
+        361.9,
+        894.7,
+        517.7
+      ]
+    }
+  ],
+  "vram": {
+    "max_mem_allocated_mib": 56.64,
+    "device_name": "NVIDIA GeForce RTX 4050 Laptop GPU"
+  },
+  "annotated_output": "artifacts/t01_detection/img (1)_pred.jpg",
+  "license_note": "YOLOv10/ultralytics weights+code are AGPL-3.0; commercial/closed distribution needs license review or enterprise license.",
+  "honesty_note": "Proves a real model ran real inference and produced boxes; does NOT prove desk-dataset class accuracy (evaluated after T14 fine-tuning)."
+}

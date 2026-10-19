@@ -1,0 +1,356 @@
+{
+  "conf": 0.25,
+  "iou": 0.5,
+  "caveats": [
+    "desk_fine 原生 val 97 图 / desk9 val 93 图（保留规则不同，非同一集合）",
+    "数据集干净桌面偏置；含增强重复、无会话分组、可能泄漏",
+    "cup/bottle 家族细类在 val 上 support 极小(can/waterpot/disposable_cup 等个位数)，每类 P/R 噪声大",
+    "父类聚合对比在 desk9 val(93) 共同基准上进行，数字仅供相对比较",
+    "desk_fine 原生 mAP 用 ultralytics 默认 conf(0.001) 计算，与 Phase 1 desk9 mAP50=0.848 方法一致可对比；23 类词表 mAP 天然低于 9 类（类更多、含长尾），比较应看每类而非总 mAP",
+    "父类聚合(Part3)两模型均在 conf=0.25 下用 model.predict，与 Phase 1 eval_track1.json 的 finetuned_per_class 同口径"
+  ],
+  "desk_fine_val_images": 97,
+  "desk_fine_native": {
+    "mAP50": 0.7468499648591064,
+    "mAP50-95": 0.5550376950715378,
+    "precision": 0.8643349510541616,
+    "recall": 0.6651411820668843
+  },
+  "desk_fine_per_class": {
+    "laptop": {
+      "precision": 0.967,
+      "recall": 0.909,
+      "mAP50": 0.984,
+      "mAP50-95": 0.812
+    },
+    "monitor": {
+      "precision": 0.976,
+      "recall": 0.929,
+      "mAP50": 0.956,
+      "mAP50-95": 0.862
+    },
+    "keyboard": {
+      "precision": 0.941,
+      "recall": 0.898,
+      "mAP50": 0.949,
+      "mAP50-95": 0.71
+    },
+    "mouse": {
+      "precision": 0.984,
+      "recall": 0.936,
+      "mAP50": 0.979,
+      "mAP50-95": 0.717
+    },
+    "mobile_phone": {
+      "precision": 0.978,
+      "recall": 0.625,
+      "mAP50": 0.716,
+      "mAP50-95": 0.57
+    },
+    "book": {
+      "precision": 0.925,
+      "recall": 0.696,
+      "mAP50": 0.772,
+      "mAP50-95": 0.54
+    },
+    "pen": {
+      "precision": 0.955,
+      "recall": 0.724,
+      "mAP50": 0.769,
+      "mAP50-95": 0.555
+    },
+    "cup": {
+      "precision": 0.966,
+      "recall": 0.718,
+      "mAP50": 0.883,
+      "mAP50-95": 0.584
+    },
+    "thermos_cup": {
+      "precision": 0.895,
+      "recall": 0.688,
+      "mAP50": 0.848,
+      "mAP50-95": 0.666
+    },
+    "plastic_cup": {
+      "precision": 0.758,
+      "recall": 0.5,
+      "mAP50": 0.555,
+      "mAP50-95": 0.396
+    },
+    "disposable_cup": {
+      "precision": 0.644,
+      "recall": 0.5,
+      "mAP50": 0.795,
+      "mAP50-95": 0.638
+    },
+    "bottle": {
+      "precision": 0.749,
+      "recall": 0.473,
+      "mAP50": 0.529,
+      "mAP50-95": 0.343
+    },
+    "plastic_bottle": {
+      "precision": 0.899,
+      "recall": 0.513,
+      "mAP50": 0.566,
+      "mAP50-95": 0.354
+    },
+    "squeeze_bottle": {
+      "precision": 0.659,
+      "recall": 0.818,
+      "mAP50": 0.729,
+      "mAP50-95": 0.574
+    },
+    "can": {
+      "precision": 0.431,
+      "recall": 0.333,
+      "mAP50": 0.168,
+      "mAP50-95": 0.151
+    },
+    "waterpot": {
+      "precision": 1.0,
+      "recall": 0.344,
+      "mAP50": 0.545,
+      "mAP50-95": 0.326
+    },
+    "cable": {
+      "precision": 0.889,
+      "recall": 0.616,
+      "mAP50": 0.732,
+      "mAP50-95": 0.507
+    },
+    "charger": {
+      "precision": 0.804,
+      "recall": 0.578,
+      "mAP50": 0.663,
+      "mAP50-95": 0.435
+    },
+    "tissue": {
+      "precision": 0.942,
+      "recall": 0.639,
+      "mAP50": 0.76,
+      "mAP50-95": 0.549
+    },
+    "paper": {
+      "precision": 0.845,
+      "recall": 0.703,
+      "mAP50": 0.708,
+      "mAP50-95": 0.571
+    },
+    "lamp": {
+      "precision": 0.836,
+      "recall": 0.677,
+      "mAP50": 0.783,
+      "mAP50-95": 0.511
+    },
+    "headphones": {
+      "precision": 0.915,
+      "recall": 0.75,
+      "mAP50": 0.859,
+      "mAP50-95": 0.65
+    },
+    "mouse_pad": {
+      "precision": 0.921,
+      "recall": 0.731,
+      "mAP50": 0.932,
+      "mAP50-95": 0.744
+    }
+  },
+  "family_differentiation": {
+    "cup_family": {
+      "cup": {
+        "precision": 0.966,
+        "recall": 0.718,
+        "mAP50": 0.883,
+        "mAP50-95": 0.584
+      },
+      "thermos_cup": {
+        "precision": 0.895,
+        "recall": 0.688,
+        "mAP50": 0.848,
+        "mAP50-95": 0.666
+      },
+      "plastic_cup": {
+        "precision": 0.758,
+        "recall": 0.5,
+        "mAP50": 0.555,
+        "mAP50-95": 0.396
+      },
+      "disposable_cup": {
+        "precision": 0.644,
+        "recall": 0.5,
+        "mAP50": 0.795,
+        "mAP50-95": 0.638
+      }
+    },
+    "bottle_family": {
+      "bottle": {
+        "precision": 0.749,
+        "recall": 0.473,
+        "mAP50": 0.529,
+        "mAP50-95": 0.343
+      },
+      "plastic_bottle": {
+        "precision": 0.899,
+        "recall": 0.513,
+        "mAP50": 0.566,
+        "mAP50-95": 0.354
+      },
+      "squeeze_bottle": {
+        "precision": 0.659,
+        "recall": 0.818,
+        "mAP50": 0.729,
+        "mAP50-95": 0.574
+      },
+      "can": {
+        "precision": 0.431,
+        "recall": 0.333,
+        "mAP50": 0.168,
+        "mAP50-95": 0.151
+      },
+      "waterpot": {
+        "precision": 1.0,
+        "recall": 0.344,
+        "mAP50": 0.545,
+        "mAP50-95": 0.326
+      }
+    },
+    "cup_family_confusion": {
+      "cup": {
+        "mouse": 1.0,
+        "book": 1.0,
+        "cup": 52.0,
+        "thermos_cup": 2.0,
+        "plastic_cup": 1.0,
+        "disposable_cup": 2.0,
+        "bottle": 1.0,
+        "plastic_bottle": 1.0,
+        "waterpot": 1.0,
+        "cable": 3.0,
+        "tissue": 1.0,
+        "headphones": 4.0,
+        "background(FN)": 1.0
+      },
+      "thermos_cup": {
+        "mouse": 5.0,
+        "cup": 4.0,
+        "thermos_cup": 22.0,
+        "plastic_cup": 4.0,
+        "bottle": 3.0,
+        "squeeze_bottle": 1.0,
+        "waterpot": 2.0,
+        "cable": 2.0,
+        "charger": 1.0,
+        "tissue": 1.0,
+        "paper": 1.0,
+        "headphones": 1.0,
+        "background(FN)": 1.0
+      },
+      "plastic_cup": {
+        "thermos_cup": 3.0,
+        "plastic_cup": 2.0,
+        "disposable_cup": 1.0,
+        "bottle": 2.0,
+        "plastic_bottle": 1.0,
+        "tissue": 1.0
+      },
+      "disposable_cup": {
+        "cup": 1.0,
+        "disposable_cup": 3.0,
+        "bottle": 1.0,
+        "can": 1.0
+      }
+    },
+    "bottle_family_confusion": {
+      "bottle": {
+        "mouse": 3.0,
+        "book": 3.0,
+        "cup": 3.0,
+        "thermos_cup": 3.0,
+        "plastic_cup": 1.0,
+        "disposable_cup": 1.0,
+        "bottle": 22.0,
+        "plastic_bottle": 4.0,
+        "squeeze_bottle": 10.0,
+        "tissue": 1.0,
+        "background(FN)": 4.0
+      },
+      "plastic_bottle": {
+        "keyboard": 1.0,
+        "cup": 3.0,
+        "thermos_cup": 2.0,
+        "plastic_cup": 2.0,
+        "bottle": 10.0,
+        "plastic_bottle": 7.0,
+        "squeeze_bottle": 8.0,
+        "waterpot": 1.0,
+        "tissue": 1.0,
+        "background(FN)": 4.0
+      },
+      "squeeze_bottle": {
+        "plastic_cup": 1.0,
+        "bottle": 1.0,
+        "plastic_bottle": 1.0,
+        "squeeze_bottle": 5.0,
+        "cable": 1.0,
+        "headphones": 1.0,
+        "background(FN)": 1.0
+      },
+      "can": {
+        "book": 1.0,
+        "cup": 1.0,
+        "bottle": 1.0
+      },
+      "waterpot": {
+        "plastic_cup": 1.0,
+        "plastic_bottle": 1.0,
+        "cable": 1.0,
+        "lamp": 1.0,
+        "background(FN)": 1.0
+      }
+    }
+  },
+  "parent_agg_val_images": 93,
+  "parent_agg_desk9": {
+    "cup": {
+      "precision": 0.84,
+      "recall": 0.815,
+      "tp": 110,
+      "fp": 21,
+      "fn": 25
+    },
+    "bottle": {
+      "precision": 0.686,
+      "recall": 0.637,
+      "tp": 72,
+      "fp": 33,
+      "fn": 41
+    }
+  },
+  "parent_agg_desk_fine": {
+    "cup": {
+      "precision": 0.843,
+      "recall": 0.793,
+      "tp": 107,
+      "fp": 20,
+      "fn": 28
+    },
+    "bottle": {
+      "precision": 0.592,
+      "recall": 0.655,
+      "tp": 74,
+      "fp": 51,
+      "fn": 39
+    }
+  },
+  "parent_agg_delta": {
+    "cup": {
+      "precision": 0.003,
+      "recall": -0.022
+    },
+    "bottle": {
+      "precision": -0.094,
+      "recall": 0.018
+    }
+  }
+}

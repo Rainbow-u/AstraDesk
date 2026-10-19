@@ -1,0 +1,215 @@
+{
+  "run_mode": "real",
+  "weights": "/mnt/d/AstraDesk/weights/yolov10_desk_fine.pt",
+  "note": "real 模式真实 GPU/CPU 推理，非 mock；全图当桌面为冒烟近似（无用户标定桌面框）",
+  "fine_classes_seen": [
+    "cable",
+    "charger",
+    "headphones",
+    "lamp",
+    "thermos_cup",
+    "tissue"
+  ],
+  "records": [
+    {
+      "image": "img (1).jpg",
+      "model_name": "yolov10_desk_fine",
+      "run_mode": "real",
+      "device": "auto",
+      "elapsed_seconds": 2.291,
+      "detections": [
+        {
+          "class_id": 0,
+          "class_name": "laptop",
+          "confidence": 0.897,
+          "source": "yolov10:yolov10_desk_fine"
+        },
+        {
+          "class_id": 5,
+          "class_name": "book",
+          "confidence": 0.871,
+          "source": "yolov10:yolov10_desk_fine"
+        },
+        {
+          "class_id": 20,
+          "class_name": "lamp",
+          "confidence": 0.506,
+          "source": "yolov10:yolov10_desk_fine"
+        },
+        {
+          "class_id": 20,
+          "class_name": "lamp",
+          "confidence": 0.457,
+          "source": "yolov10:yolov10_desk_fine"
+        },
+        {
+          "class_id": 16,
+          "class_name": "cable",
+          "confidence": 0.395,
+          "source": "yolov10:yolov10_desk_fine"
+        }
+      ],
+      "all_names_in_product_vocab": true,
+      "all_source_finetuned": true,
+      "scene_object_count": 5,
+      "description_summary": "桌面共 5 件物品：笔记本电脑(中·近)、书(中·远)、台灯(中·近)、台灯(中·近)、数据线(中·近)。",
+      "description_text_head": "【场景描述】(整理模式：办公；靠用户侧：下侧)"
+    },
+    {
+      "image": "img (10).jpg",
+      "model_name": "yolov10_desk_fine",
+      "run_mode": "real",
+      "device": "auto",
+      "elapsed_seconds": 0.081,
+      "detections": [
+        {
+          "class_id": 5,
+          "class_name": "book",
+          "confidence": 0.915,
+          "source": "yolov10:yolov10_desk_fine"
+        },
+        {
+          "class_id": 16,
+          "class_name": "cable",
+          "confidence": 0.905,
+          "source": "yolov10:yolov10_desk_fine"
+        },
+        {
+          "class_id": 7,
+          "class_name": "cup",
+          "confidence": 0.902,
+          "source": "yolov10:yolov10_desk_fine"
+        },
+        {
+          "class_id": 20,
+          "class_name": "lamp",
+          "confidence": 0.89,
+          "source": "yolov10:yolov10_desk_fine"
+        },
+        {
+          "class_id": 8,
+          "class_name": "thermos_cup",
+          "confidence": 0.886,
+          "source": "yolov10:yolov10_desk_fine"
+        },
+        {
+          "class_id": 18,
+          "class_name": "tissue",
+          "confidence": 0.861,
+          "source": "yolov10:yolov10_desk_fine"
+        },
+        {
+          "class_id": 5,
+          "class_name": "book",
+          "confidence": 0.815,
+          "source": "yolov10:yolov10_desk_fine"
+        },
+        {
+          "class_id": 6,
+          "class_name": "pen",
+          "confidence": 0.785,
+          "source": "yolov10:yolov10_desk_fine"
+        },
+        {
+          "class_id": 5,
+          "class_name": "book",
+          "confidence": 0.42,
+          "source": "yolov10:yolov10_desk_fine"
+        }
+      ],
+      "all_names_in_product_vocab": true,
+      "all_source_finetuned": true,
+      "scene_object_count": 9,
+      "description_summary": "桌面共 9 件物品：书(左·近)、数据线(右·中)、杯子(右·近)、台灯(中·中)、保温杯(中·中)、纸巾(右·近)、书(左·远)、笔(左·近)、书(右·近)。",
+      "description_text_head": "【场景描述】(整理模式：办公；靠用户侧：下侧)"
+    },
+    {
+      "image": "img (11).jpg",
+      "model_name": "yolov10_desk_fine",
+      "run_mode": "real",
+      "device": "auto",
+      "elapsed_seconds": 0.015,
+      "detections": [
+        {
+          "class_id": 0,
+          "class_name": "laptop",
+          "confidence": 0.915,
+          "source": "yolov10:yolov10_desk_fine"
+        },
+        {
+          "class_id": 8,
+          "class_name": "thermos_cup",
+          "confidence": 0.9,
+          "source": "yolov10:yolov10_desk_fine"
+        },
+        {
+          "class_id": 21,
+          "class_name": "headphones",
+          "confidence": 0.885,
+          "source": "yolov10:yolov10_desk_fine"
+        },
+        {
+          "class_id": 3,
+          "class_name": "mouse",
+          "confidence": 0.835,
+          "source": "yolov10:yolov10_desk_fine"
+        },
+        {
+          "class_id": 5,
+          "class_name": "book",
+          "confidence": 0.811,
+          "source": "yolov10:yolov10_desk_fine"
+        },
+        {
+          "class_id": 17,
+          "class_name": "charger",
+          "confidence": 0.687,
+          "source": "yolov10:yolov10_desk_fine"
+        }
+      ],
+      "all_names_in_product_vocab": true,
+      "all_source_finetuned": true,
+      "scene_object_count": 6,
+      "description_summary": "桌面共 6 件物品：笔记本电脑(中·近)、保温杯(右·近)、耳机(右·中)、鼠标(右·近)、书(左·远)、充电器(右·远)。",
+      "description_text_head": "【场景描述】(整理模式：办公；靠用户侧：下侧)"
+    },
+    {
+      "image": "img (114).jpg",
+      "model_name": "yolov10_desk_fine",
+      "run_mode": "real",
+      "device": "auto",
+      "elapsed_seconds": 0.079,
+      "detections": [
+        {
+          "class_id": 8,
+          "class_name": "thermos_cup",
+          "confidence": 0.932,
+          "source": "yolov10:yolov10_desk_fine"
+        },
+        {
+          "class_id": 5,
+          "class_name": "book",
+          "confidence": 0.858,
+          "source": "yolov10:yolov10_desk_fine"
+        },
+        {
+          "class_id": 0,
+          "class_name": "laptop",
+          "confidence": 0.76,
+          "source": "yolov10:yolov10_desk_fine"
+        },
+        {
+          "class_id": 7,
+          "class_name": "cup",
+          "confidence": 0.28,
+          "source": "yolov10:yolov10_desk_fine"
+        }
+      ],
+      "all_names_in_product_vocab": true,
+      "all_source_finetuned": true,
+      "scene_object_count": 4,
+      "description_summary": "桌面共 4 件物品：保温杯(左·中)、书(中·远)、笔记本电脑(中·中)、杯子(中·中)。",
+      "description_text_head": "【场景描述】(整理模式：办公；靠用户侧：下侧)"
+    }
+  ]
+}

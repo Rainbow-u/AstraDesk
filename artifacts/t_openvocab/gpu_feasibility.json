@@ -1,0 +1,25 @@
+{
+  "device": "cuda:0",
+  "gpu_total_gib": 5.997,
+  "weights": "/mnt/d/AstraDesk/weights/yolov8s-world.pt",
+  "image": "img (1).jpg",
+  "raw_detections": 22,
+  "cold_elapsed_seconds": 8.239,
+  "warm_elapsed_seconds": 0.025,
+  "peak_allocated_gib": 0.682,
+  "peak_reserved_gib": 0.732,
+  "fits_6gb": true,
+  "names": [
+    "book",
+    "bottle",
+    "cup",
+    "lamp",
+    "laptop",
+    "mouse",
+    "pen",
+    "power bank",
+    "speaker",
+    "tissue"
+  ],
+  "note": "峰值显存为 YOLO-World 推理本身；系统/桌面另占约 2.6GiB，实际可用需扣除。"
+}

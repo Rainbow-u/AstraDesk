@@ -1,0 +1,571 @@
+{
+  "run_mode": "real",
+  "weights": "/mnt/d/AstraDesk/weights/yolov10_desk_fine.pt",
+  "note": "real 模式真实 GPU/CPU 推理 + 原图像素取色，非 mock；全图当桌面为冒烟近似",
+  "records": [
+    {
+      "image": "img (1).jpg",
+      "model_name": "yolov10_desk_fine",
+      "run_mode": "real",
+      "device": "auto",
+      "object_count": 5,
+      "attributes": [
+        {
+          "object_id": "img (1).jpg#0",
+          "class_name": "laptop",
+          "color": {
+            "name": "黑",
+            "rgb": [
+              23,
+              22,
+              23
+            ],
+            "hsv": [
+              300.0,
+              0.043,
+              0.09
+            ]
+          },
+          "orientation": "square",
+          "size_class": "medium",
+          "aspect_ratio": 0.8786,
+          "semantic_status": "blocked"
+        },
+        {
+          "object_id": "img (1).jpg#1",
+          "class_name": "book",
+          "color": {
+            "name": "黑",
+            "rgb": [
+              24,
+              22,
+              23
+            ],
+            "hsv": [
+              330.0,
+              0.083,
+              0.094
+            ]
+          },
+          "orientation": "landscape",
+          "size_class": "large",
+          "aspect_ratio": 1.7108,
+          "semantic_status": "blocked"
+        },
+        {
+          "object_id": "img (1).jpg#2",
+          "class_name": "lamp",
+          "color": {
+            "name": "棕",
+            "rgb": [
+              122,
+              117,
+              105
+            ],
+            "hsv": [
+              42.4,
+              0.139,
+              0.478
+            ]
+          },
+          "orientation": "portrait",
+          "size_class": "small",
+          "aspect_ratio": 0.1696,
+          "semantic_status": "blocked"
+        },
+        {
+          "object_id": "img (1).jpg#3",
+          "class_name": "lamp",
+          "color": {
+            "name": "棕",
+            "rgb": [
+              122,
+              117,
+              105
+            ],
+            "hsv": [
+              42.4,
+              0.139,
+              0.478
+            ]
+          },
+          "orientation": "portrait",
+          "size_class": "small",
+          "aspect_ratio": 0.2273,
+          "semantic_status": "blocked"
+        },
+        {
+          "object_id": "img (1).jpg#4",
+          "class_name": "cable",
+          "color": {
+            "name": "灰",
+            "rgb": [
+              86,
+              89,
+              89
+            ],
+            "hsv": [
+              180.0,
+              0.034,
+              0.349
+            ]
+          },
+          "orientation": "portrait",
+          "size_class": "small",
+          "aspect_ratio": 0.7792,
+          "semantic_status": "blocked"
+        }
+      ],
+      "colors_non_unknown": 5,
+      "all_geometry_present": true,
+      "all_semantic_blocked": true,
+      "deterministic": true,
+      "schema_valid": true,
+      "description_summary": "桌面共 5 件物品：黑色笔记本电脑(中·近,中号)、黑色书(中·远,横放,大号)、棕色台灯(中·近,竖放,小号)、棕色台灯(中·近,竖放,小号)、灰色数据线(中·近,竖放,小号)。"
+    },
+    {
+      "image": "img (10).jpg",
+      "model_name": "yolov10_desk_fine",
+      "run_mode": "real",
+      "device": "auto",
+      "object_count": 9,
+      "attributes": [
+        {
+          "object_id": "img (10).jpg#0",
+          "class_name": "book",
+          "color": {
+            "name": "黄",
+            "rgb": [
+              201,
+              196,
+              165
+            ],
+            "hsv": [
+              51.7,
+              0.179,
+              0.788
+            ]
+          },
+          "orientation": "landscape",
+          "size_class": "medium",
+          "aspect_ratio": 1.5777,
+          "semantic_status": "blocked"
+        },
+        {
+          "object_id": "img (10).jpg#1",
+          "class_name": "cable",
+          "color": {
+            "name": "灰",
+            "rgb": [
+              140,
+              141,
+              135
+            ],
+            "hsv": [
+              70.0,
+              0.043,
+              0.553
+            ]
+          },
+          "orientation": "landscape",
+          "size_class": "small",
+          "aspect_ratio": 2.1616,
+          "semantic_status": "blocked"
+        },
+        {
+          "object_id": "img (10).jpg#2",
+          "class_name": "cup",
+          "color": {
+            "name": "灰",
+            "rgb": [
+              122,
+              123,
+              117
+            ],
+            "hsv": [
+              70.0,
+              0.049,
+              0.482
+            ]
+          },
+          "orientation": "portrait",
+          "size_class": "small",
+          "aspect_ratio": 0.7608,
+          "semantic_status": "blocked"
+        },
+        {
+          "object_id": "img (10).jpg#3",
+          "class_name": "lamp",
+          "color": {
+            "name": "灰",
+            "rgb": [
+              180,
+              187,
+              199
+            ],
+            "hsv": [
+              217.9,
+              0.095,
+              0.78
+            ]
+          },
+          "orientation": "portrait",
+          "size_class": "medium",
+          "aspect_ratio": 0.6488,
+          "semantic_status": "blocked"
+        },
+        {
+          "object_id": "img (10).jpg#4",
+          "class_name": "thermos_cup",
+          "color": {
+            "name": "黑",
+            "rgb": [
+              23,
+              40,
+              40
+            ],
+            "hsv": [
+              180.0,
+              0.425,
+              0.157
+            ]
+          },
+          "orientation": "portrait",
+          "size_class": "medium",
+          "aspect_ratio": 0.8295,
+          "semantic_status": "blocked"
+        },
+        {
+          "object_id": "img (10).jpg#5",
+          "class_name": "tissue",
+          "color": {
+            "name": "橙",
+            "rgb": [
+              178,
+              167,
+              137
+            ],
+            "hsv": [
+              43.9,
+              0.23,
+              0.698
+            ]
+          },
+          "orientation": "square",
+          "size_class": "small",
+          "aspect_ratio": 1.0446,
+          "semantic_status": "blocked"
+        },
+        {
+          "object_id": "img (10).jpg#6",
+          "class_name": "book",
+          "color": {
+            "name": "黑",
+            "rgb": [
+              8,
+              8,
+              7
+            ],
+            "hsv": [
+              60.0,
+              0.125,
+              0.031
+            ]
+          },
+          "orientation": "square",
+          "size_class": "medium",
+          "aspect_ratio": 1.1367,
+          "semantic_status": "blocked"
+        },
+        {
+          "object_id": "img (10).jpg#7",
+          "class_name": "pen",
+          "color": {
+            "name": "黄",
+            "rgb": [
+              201,
+              196,
+              165
+            ],
+            "hsv": [
+              51.7,
+              0.179,
+              0.788
+            ]
+          },
+          "orientation": "square",
+          "size_class": "small",
+          "aspect_ratio": 1.0494,
+          "semantic_status": "blocked"
+        },
+        {
+          "object_id": "img (10).jpg#8",
+          "class_name": "book",
+          "color": {
+            "name": "黄",
+            "rgb": [
+              183,
+              179,
+              147
+            ],
+            "hsv": [
+              53.3,
+              0.197,
+              0.718
+            ]
+          },
+          "orientation": "portrait",
+          "size_class": "medium",
+          "aspect_ratio": 0.6567,
+          "semantic_status": "blocked"
+        }
+      ],
+      "colors_non_unknown": 9,
+      "all_geometry_present": true,
+      "all_semantic_blocked": true,
+      "deterministic": true,
+      "schema_valid": true,
+      "description_summary": "桌面共 9 件物品：黄色书(左·近,横放,中号)、灰色数据线(右·中,横放,小号)、灰色杯子(右·近,竖放,小号)、灰色台灯(中·中,竖放,中号)、黑色保温杯(中·中,竖放,中号)、橙色纸巾(右·近,小号)、黑色书(左·远,中号)、黄色笔(左·近,小号)、黄色书(右·近,竖放,中号)。"
+    },
+    {
+      "image": "img (11).jpg",
+      "model_name": "yolov10_desk_fine",
+      "run_mode": "real",
+      "device": "auto",
+      "object_count": 6,
+      "attributes": [
+        {
+          "object_id": "img (11).jpg#0",
+          "class_name": "laptop",
+          "color": {
+            "name": "黑",
+            "rgb": [
+              10,
+              8,
+              9
+            ],
+            "hsv": [
+              330.0,
+              0.2,
+              0.039
+            ]
+          },
+          "orientation": "square",
+          "size_class": "large",
+          "aspect_ratio": 0.9872,
+          "semantic_status": "blocked"
+        },
+        {
+          "object_id": "img (11).jpg#1",
+          "class_name": "thermos_cup",
+          "color": {
+            "name": "橙",
+            "rgb": [
+              169,
+              151,
+              136
+            ],
+            "hsv": [
+              27.3,
+              0.195,
+              0.663
+            ]
+          },
+          "orientation": "portrait",
+          "size_class": "medium",
+          "aspect_ratio": 0.4195,
+          "semantic_status": "blocked"
+        },
+        {
+          "object_id": "img (11).jpg#2",
+          "class_name": "headphones",
+          "color": {
+            "name": "橙",
+            "rgb": [
+              182,
+              163,
+              138
+            ],
+            "hsv": [
+              34.1,
+              0.242,
+              0.714
+            ]
+          },
+          "orientation": "portrait",
+          "size_class": "medium",
+          "aspect_ratio": 0.358,
+          "semantic_status": "blocked"
+        },
+        {
+          "object_id": "img (11).jpg#3",
+          "class_name": "mouse",
+          "color": {
+            "name": "红",
+            "rgb": [
+              196,
+              172,
+              168
+            ],
+            "hsv": [
+              8.6,
+              0.143,
+              0.769
+            ]
+          },
+          "orientation": "landscape",
+          "size_class": "small",
+          "aspect_ratio": 1.4384,
+          "semantic_status": "blocked"
+        },
+        {
+          "object_id": "img (11).jpg#4",
+          "class_name": "book",
+          "color": {
+            "name": "橙",
+            "rgb": [
+              147,
+              123,
+              88
+            ],
+            "hsv": [
+              35.6,
+              0.401,
+              0.576
+            ]
+          },
+          "orientation": "portrait",
+          "size_class": "medium",
+          "aspect_ratio": 0.685,
+          "semantic_status": "blocked"
+        },
+        {
+          "object_id": "img (11).jpg#5",
+          "class_name": "charger",
+          "color": {
+            "name": "橙",
+            "rgb": [
+              171,
+              155,
+              147
+            ],
+            "hsv": [
+              20.0,
+              0.14,
+              0.671
+            ]
+          },
+          "orientation": "square",
+          "size_class": "small",
+          "aspect_ratio": 0.8735,
+          "semantic_status": "blocked"
+        }
+      ],
+      "colors_non_unknown": 6,
+      "all_geometry_present": true,
+      "all_semantic_blocked": true,
+      "deterministic": true,
+      "schema_valid": true,
+      "description_summary": "桌面共 6 件物品：黑色笔记本电脑(中·近,大号)、橙色保温杯(右·近,竖放,中号)、橙色耳机(右·中,竖放,中号)、红色鼠标(右·近,横放,小号)、橙色书(左·远,竖放,中号)、橙色充电器(右·远,小号)。"
+    },
+    {
+      "image": "img (114).jpg",
+      "model_name": "yolov10_desk_fine",
+      "run_mode": "real",
+      "device": "auto",
+      "object_count": 4,
+      "attributes": [
+        {
+          "object_id": "img (114).jpg#0",
+          "class_name": "thermos_cup",
+          "color": {
+            "name": "黑",
+            "rgb": [
+              8,
+              4,
+              10
+            ],
+            "hsv": [
+              280.0,
+              0.6,
+              0.039
+            ]
+          },
+          "orientation": "square",
+          "size_class": "small",
+          "aspect_ratio": 0.9508,
+          "semantic_status": "blocked"
+        },
+        {
+          "object_id": "img (114).jpg#1",
+          "class_name": "book",
+          "color": {
+            "name": "黑",
+            "rgb": [
+              39,
+              24,
+              25
+            ],
+            "hsv": [
+              356.0,
+              0.385,
+              0.153
+            ]
+          },
+          "orientation": "landscape",
+          "size_class": "medium",
+          "aspect_ratio": 2.0787,
+          "semantic_status": "blocked"
+        },
+        {
+          "object_id": "img (114).jpg#2",
+          "class_name": "laptop",
+          "color": {
+            "name": "青",
+            "rgb": [
+              39,
+              231,
+              251
+            ],
+            "hsv": [
+              185.7,
+              0.845,
+              0.984
+            ]
+          },
+          "orientation": "landscape",
+          "size_class": "medium",
+          "aspect_ratio": 1.6531,
+          "semantic_status": "blocked"
+        },
+        {
+          "object_id": "img (114).jpg#3",
+          "class_name": "cup",
+          "color": {
+            "name": "紫",
+            "rgb": [
+              40,
+              36,
+              41
+            ],
+            "hsv": [
+              288.0,
+              0.122,
+              0.161
+            ]
+          },
+          "orientation": "square",
+          "size_class": "small",
+          "aspect_ratio": 0.8967,
+          "semantic_status": "blocked"
+        }
+      ],
+      "colors_non_unknown": 4,
+      "all_geometry_present": true,
+      "all_semantic_blocked": true,
+      "deterministic": true,
+      "schema_valid": true,
+      "description_summary": "桌面共 4 件物品：黑色保温杯(左·中,小号)、黑色书(中·远,横放,中号)、青色笔记本电脑(中·中,横放,中号)、紫色杯子(中·中,小号)。"
+    }
+  ]
+}

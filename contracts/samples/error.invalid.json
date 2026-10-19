@@ -1,0 +1,5 @@
+{
+  "code": "SOMETHING_WEIRD",
+  "message": "unknown code and missing request_id",
+  "retryable": "yes"
+}

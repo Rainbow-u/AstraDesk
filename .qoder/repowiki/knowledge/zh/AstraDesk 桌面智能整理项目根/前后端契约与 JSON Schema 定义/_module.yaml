@@ -1,0 +1,9 @@
+schema_version: 1
+module_path: contracts
+title: 前后端契约与 JSON Schema 定义
+scope:
+    - contracts/
+source_files: []
+depends_on: []
+related_to:
+    - path: tests

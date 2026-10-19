@@ -1,0 +1,227 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://astradesk.local/contracts/scene_facts.schema.json",
+  "title": "SceneFacts",
+  "description": "确定性场景事实（Phase 3 facts-first NL 的单一事实来源）。所有坐标为桌面归一化 bbox_desk∈[0,1]^2 下的相对量，非现实物理量（PRD 5.2）。下游只能引用其中已有 object_id 与数值，不得改写（H01）。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "user_side", "handedness", "mode", "grid_resolution",
+    "object_count", "objects", "zones", "occupancy", "continuous_workspace",
+    "grouping", "alignment", "accessibility", "h07_separation", "density"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "minLength": 1 },
+    "user_side": { "enum": ["bottom", "top", "left", "right"] },
+    "handedness": { "enum": ["left", "right"] },
+    "mode": { "enum": ["study", "office", "minimal"] },
+    "grid_resolution": { "type": "integer", "minimum": 4 },
+    "object_count": { "type": "integer", "minimum": 0 },
+    "objects": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/object_fact" }
+    },
+    "zones": {
+      "type": "object",
+      "description": "九宫格计数（lateral_depth → 数量）。",
+      "additionalProperties": { "type": "integer", "minimum": 0 }
+    },
+    "occupancy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["occupied_ratio", "free_ratio"],
+      "properties": {
+        "occupied_ratio": { "type": "number", "minimum": 0, "maximum": 1 },
+        "free_ratio": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "continuous_workspace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["work_region_cells", "largest_empty_rect_ratio", "largest_empty_rect_desk"],
+      "properties": {
+        "work_region_cells": { "type": "integer", "minimum": 0 },
+        "largest_empty_rect_ratio": { "type": "number", "minimum": 0, "maximum": 1 },
+        "largest_empty_rect_desk": {
+          "oneOf": [
+            { "type": "null" },
+            { "$ref": "#/$defs/bbox_desk" }
+          ]
+        }
+      }
+    },
+    "grouping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["clusters", "functional_groups", "grouping_score"],
+      "properties": {
+        "clusters": { "type": "array", "items": { "$ref": "#/$defs/cluster" } },
+        "functional_groups": { "type": "array", "items": { "$ref": "#/$defs/group_entry" } },
+        "grouping_score": { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
+      }
+    },
+    "alignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mean_edge_deviation", "alignment_score", "reference_lines"],
+      "properties": {
+        "mean_edge_deviation": { "type": "number", "minimum": 0 },
+        "alignment_score": { "type": "number", "minimum": 0, "maximum": 1 },
+        "reference_lines": { "type": "array", "items": { "type": "number" } }
+      }
+    },
+    "accessibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["user_anchor", "mouse_side", "high_frequency_items", "accessibility_score"],
+      "properties": {
+        "user_anchor": { "$ref": "#/$defs/point" },
+        "mouse_side": { "enum": ["left", "right"] },
+        "high_frequency_items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["object_id", "class_name", "distance_to_user_region"],
+            "properties": {
+              "object_id": { "type": "string", "minLength": 1 },
+              "class_name": { "$ref": "#/$defs/class_name" },
+              "distance_to_user_region": { "type": "number", "minimum": 0 }
+            }
+          }
+        },
+        "accessibility_score": { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
+      }
+    },
+    "h07_separation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["applicable", "min_distance", "threshold", "drink_object_id", "electronics_object_id", "separated"],
+      "properties": {
+        "applicable": { "type": "boolean" },
+        "min_distance": { "type": ["number", "null"], "minimum": 0 },
+        "threshold": { "type": "number", "minimum": 0 },
+        "drink_object_id": { "type": ["string", "null"] },
+        "electronics_object_id": { "type": ["string", "null"] },
+        "separated": { "type": ["boolean", "null"] }
+      }
+    },
+    "density": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["object_count", "occupied_ratio", "fixed_count"],
+      "properties": {
+        "object_count": { "type": "integer", "minimum": 0 },
+        "occupied_ratio": { "type": "number", "minimum": 0, "maximum": 1 },
+        "fixed_count": { "type": "integer", "minimum": 0 }
+      }
+    }
+  },
+  "$defs": {
+    "class_name": {
+      "enum": ["laptop", "monitor", "keyboard", "mouse", "mobile_phone", "book", "pen", "cup", "thermos_cup", "plastic_cup", "disposable_cup", "bottle", "plastic_bottle", "squeeze_bottle", "can", "waterpot", "cable", "charger", "tissue", "paper", "lamp", "headphones", "mouse_pad", "other"]
+    },
+    "point": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "items": { "type": "number" }
+    },
+    "bbox_desk": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": { "type": "number" },
+      "description": "[x1,y1,x2,y2] 桌面归一化，左上原点。"
+    },
+    "color_name": {
+      "description": "中文基本色名（12 种）或 unknown（无原图不可测，不编造）。",
+      "enum": ["黑", "白", "灰", "红", "橙", "黄", "绿", "青", "蓝", "紫", "棕", "粉", "unknown"]
+    },
+    "color_attr": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "rgb", "hsv"],
+      "properties": {
+        "name": { "$ref": "#/$defs/color_name" },
+        "rgb": {
+          "oneOf": [
+            { "type": "null" },
+            { "type": "array", "minItems": 3, "maxItems": 3,
+              "items": { "type": "integer", "minimum": 0, "maximum": 255 } }
+          ]
+        },
+        "hsv": {
+          "oneOf": [
+            { "type": "null" },
+            { "type": "array", "minItems": 3, "maxItems": 3,
+              "items": { "type": "number", "minimum": 0 } }
+          ]
+        }
+      }
+    },
+    "semantic_attr": {
+      "type": "object",
+      "description": "语义属性预留块（材质/开合/空满/精确朝向）：阶段 B 恒 blocked（全 null），待 VL 凭据到位由 vl_interpreter 填充；H01 不改事实清单。",
+      "additionalProperties": false,
+      "required": ["status", "material", "open_state", "fill_level", "precise_orientation"],
+      "properties": {
+        "status": { "enum": ["blocked", "available"] },
+        "material": { "type": ["string", "null"] },
+        "open_state": { "type": ["string", "null"] },
+        "fill_level": { "type": ["string", "null"] },
+        "precise_orientation": { "type": ["string", "null"] }
+      }
+    },
+    "object_attributes": {
+      "type": "object",
+      "description": "确定性物体属性（阶段 B）：颜色+几何免训练可复现；语义属性预留且恒 blocked。",
+      "additionalProperties": false,
+      "required": ["color", "aspect_ratio", "orientation", "size_class", "semantic"],
+      "properties": {
+        "color": { "$ref": "#/$defs/color_attr" },
+        "aspect_ratio": { "type": "number", "minimum": 0 },
+        "orientation": { "enum": ["landscape", "square", "portrait"] },
+        "size_class": { "enum": ["small", "medium", "large"] },
+        "semantic": { "$ref": "#/$defs/semantic_attr" }
+      }
+    },
+    "object_fact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["object_id", "class_name", "center", "area", "zone_depth", "zone_lateral", "fixed", "high_frequency", "attributes"],
+      "properties": {
+        "object_id": { "type": "string", "minLength": 1 },
+        "class_id": { "type": "integer" },
+        "class_name": { "$ref": "#/$defs/class_name" },
+        "center": { "$ref": "#/$defs/point" },
+        "area": { "type": "number", "minimum": 0, "maximum": 1 },
+        "zone_depth": { "enum": ["near", "mid", "far"] },
+        "zone_lateral": { "enum": ["left", "center", "right", "top", "middle", "bottom"] },
+        "fixed": { "type": "boolean" },
+        "high_frequency": { "type": "boolean" },
+        "source": { "type": ["string", "null"] },
+        "attributes": { "$ref": "#/$defs/object_attributes" }
+      }
+    },
+    "cluster": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["class_name", "count", "object_ids", "centroid"],
+      "properties": {
+        "class_name": { "$ref": "#/$defs/class_name" },
+        "count": { "type": "integer", "minimum": 1 },
+        "object_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "centroid": { "$ref": "#/$defs/point" }
+      }
+    },
+    "group_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["group", "count", "avg_pairwise_distance", "grouping_score", "object_ids"],
+      "properties": {
+        "group": { "enum": ["electronics", "writing", "drinkware", "other"] },
+        "count": { "type": "integer", "minimum": 1 },
+        "avg_pairwise_distance": { "type": ["number", "null"], "minimum": 0 },
+        "grouping_score": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "object_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+      }
+    }
+  }
+}

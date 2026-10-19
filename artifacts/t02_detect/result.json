@@ -1,0 +1,118 @@
+{
+  "source_image": "/mnt/d/AstraDesk/data/YOLO-DeskDataset/dataset/val/images/img (1).jpg",
+  "source_image_copied_to": "/mnt/d/AstraDesk/artifacts/t02_detect/source.jpg",
+  "capabilities": {
+    "run_mode": "real",
+    "detector": {
+      "available": true,
+      "model_name": "yolov10n",
+      "model_version": "yolov10n.pt"
+    },
+    "features": [
+      "detect"
+    ]
+  },
+  "upload": {
+    "project_id": "20ecbad2254c4eb9b25cc815e43d4102",
+    "image_asset_id": "ced26746d7d34bd98e36292c2b79be14",
+    "thumbnail_asset_id": "3a70de7f302f4f0db4bdce729baf24d4",
+    "canonical_width": 1441,
+    "canonical_height": 1080,
+    "sha256": "cc2d67aab5092e7c6e25799823429d1b6ced7d18246cab4c862864665e515c5a"
+  },
+  "job": {
+    "id": "a04aedaaaf184d3488c519c62e48017f",
+    "project_id": "20ecbad2254c4eb9b25cc815e43d4102",
+    "type": "detect",
+    "status": "succeeded",
+    "stage": "detecting",
+    "attempt": 1,
+    "result": {
+      "model_name": "yolov10n",
+      "model_version": "yolov10n.pt",
+      "run_mode": "real",
+      "device": "auto",
+      "elapsed_seconds": 3.9159,
+      "image_width": 1441,
+      "image_height": 1080,
+      "count": 6
+    },
+    "detections": [
+      {
+        "id": "5f2aa643f1ff4cd5ae03f46384e37a7a",
+        "class_id": 63,
+        "class_name": "laptop",
+        "confidence": 0.9393643140792847,
+        "bbox_image": [
+          0.210487,
+          0.626881,
+          0.469365,
+          0.907811
+        ]
+      },
+      {
+        "id": "b41ddf20ef674deba73a1ad28b189ce8",
+        "class_id": 64,
+        "class_name": "mouse",
+        "confidence": 0.8925896883010864,
+        "bbox_image": [
+          0.639769,
+          0.880195,
+          0.699398,
+          0.937935
+        ]
+      },
+      {
+        "id": "a818a8a11b784ad0a48ecfb284504019",
+        "class_id": 39,
+        "class_name": "bottle",
+        "confidence": 0.4032069742679596,
+        "bbox_image": [
+          0.822799,
+          0.586605,
+          0.881693,
+          0.762078
+        ]
+      },
+      {
+        "id": "9d10759ac2e745368fef3e85f80dee4b",
+        "class_id": 77,
+        "class_name": "teddy bear",
+        "confidence": 0.3473656475543976,
+        "bbox_image": [
+          0.415645,
+          0.306117,
+          0.53438,
+          0.482332
+        ]
+      },
+      {
+        "id": "aa06f8c4b3764a77a4921d52b35c9592",
+        "class_id": 77,
+        "class_name": "teddy bear",
+        "confidence": 0.2755807042121887,
+        "bbox_image": [
+          0.210625,
+          0.138655,
+          0.301697,
+          0.279332
+        ]
+      },
+      {
+        "id": "beb014ce66774fc29396d1ba6fe2a18b",
+        "class_id": 73,
+        "class_name": "book",
+        "confidence": 0.25031688809394836,
+        "bbox_image": [
+          0.594308,
+          0.334999,
+          0.620895,
+          0.479543
+        ]
+      }
+    ],
+    "error": null,
+    "created_at": "2026-10-11T08:07:50.927935+00:00",
+    "updated_at": "2026-10-11T08:07:54.942894+00:00"
+  }
+}

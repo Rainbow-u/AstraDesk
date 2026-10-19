@@ -1,0 +1,86 @@
+# 知识卡导出索引文件
+schema_version: 1
+locale: zh-CN
+branch: Q0DeR-MaG1C-BrAnCh-Fo2-NoN-GiT-Or-No-C0MmIt
+nodes_managed: true
+exported_at: "2026-10-11T14:22:07Z"
+modules:
+    "":
+        dir_name: AstraDesk 桌面智能整理项目根
+        title: AstraDesk 桌面智能整理项目根
+        scope:
+            - README.md
+            - AGENTS.md
+            - .gitignore
+            - pyproject.toml
+            - locks/
+        source_files: []
+        children:
+            - artifacts
+            - contracts
+            - docs
+            - packages
+            - services
+            - tests
+        depends_on: []
+        related_to: []
+    artifacts:
+        dir_name: 桌面检测任务验证产物与探针
+        title: 桌面检测任务验证产物与探针
+        scope:
+            - artifacts/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: services
+    contracts:
+        dir_name: 前后端契约与 JSON Schema 定义
+        title: 前后端契约与 JSON Schema 定义
+        scope:
+            - contracts/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: tests
+    docs:
+        dir_name: 桌面智能整理项目文档集
+        title: 桌面智能整理项目文档集
+        scope:
+            - docs/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to: []
+    packages:
+        dir_name: 算法适配器包（vision_layout_generation）
+        title: 算法适配器包（vision/layout/generation）
+        scope:
+            - packages/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to: []
+    services:
+        dir_name: AstraDesk API 服务与后台 Worker
+        title: AstraDesk API 服务与后台 Worker
+        scope:
+            - services/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: artifacts
+            - path: tests
+    tests:
+        dir_name: API 与坐标模块测试套件
+        title: API 与坐标模块测试套件
+        scope:
+            - tests/
+        source_files: []
+        children: []
+        depends_on: []
+        related_to:
+            - path: contracts
+            - path: services

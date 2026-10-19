@@ -1,0 +1,24 @@
+{
+  "model": "yolov10_desk_fine",
+  "start_weights": "/mnt/d/AstraDesk/weights/yolov10n.pt",
+  "dataset": "data/desk_fine (remapped YOLO-DeskDataset, version 2, 23 trained classes + other)",
+  "nc": 23,
+  "train_images": 1549,
+  "val_images": 97,
+  "epochs": 100,
+  "imgsz": 640,
+  "batch": 8,
+  "device": 0,
+  "amp": true,
+  "patience": 20,
+  "augmentation": "mosaic=1.0 mixup=0.3 copy_paste=0.1 hsv degrees=15 scale=0.5 fliplr=0.5",
+  "elapsed_seconds": 3407.1,
+  "metrics": {
+    "metrics/precision(B)": 0.856595031706055,
+    "metrics/recall(B)": 0.6702516834481242,
+    "metrics/mAP50(B)": 0.7460671235870935,
+    "metrics/mAP50-95(B)": 0.555188921664565,
+    "fitness": 0.555188921664565
+  },
+  "best_weights": "/mnt/d/AstraDesk/weights/yolov10_desk_fine.pt"
+}

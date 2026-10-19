@@ -1,0 +1,124 @@
+# 训练 GPU_mem 与最终指标证据（G1）
+# 源日志: /tmp/train_desk_fine.log（ultralytics 训练输出，GPU_mem=torch.cuda.memory_reserved()/1e9，十进制 GB）
+# 注：原始日志被 .gitignore(*.log) 排除、仅本地保留；本文件为已提取的自包含仓内证据（含逐 epoch 峰值）。
+
+## 逐 epoch 峰值 GPU_mem（十进制 GB）
+epoch   1: 1.61G
+epoch   2: 1.92G
+epoch   3: 1.92G
+epoch   4: 1.92G
+epoch   5: 1.94G
+epoch   6: 1.96G
+epoch   7: 1.96G
+epoch   8: 1.96G
+epoch   9: 1.96G
+epoch  10: 1.96G
+epoch  11: 1.96G
+epoch  12: 1.96G
+epoch  13: 1.96G
+epoch  14: 1.96G
+epoch  15: 1.96G
+epoch  16: 1.96G
+epoch  17: 1.96G
+epoch  18: 1.98G
+epoch  19: 1.98G
+epoch  20: 1.98G
+epoch  21: 1.98G
+epoch  22: 1.98G
+epoch  23: 1.98G
+epoch  24: 2.01G
+epoch  25: 2.01G
+epoch  26: 2.01G
+epoch  27: 2.01G
+epoch  28: 2.01G
+epoch  29: 2.01G
+epoch  30: 2.01G
+epoch  31: 2.01G
+epoch  32: 2.01G
+epoch  33: 2.01G
+epoch  34: 2.01G
+epoch  35: 2.01G
+epoch  36: 2.01G
+epoch  37: 2.01G
+epoch  38: 2.01G
+epoch  39: 2.01G
+epoch  40: 2.01G
+epoch  41: 2.01G
+epoch  42: 2.01G
+epoch  43: 2.01G
+epoch  44: 2.01G
+epoch  45: 2.01G
+epoch  46: 2.01G
+epoch  47: 2.01G
+epoch  48: 2.01G
+epoch  49: 2.01G
+epoch  50: 2.01G
+epoch  51: 2.01G
+epoch  52: 2.01G
+epoch  53: 2.01G
+epoch  54: 2.01G
+epoch  55: 2.01G
+epoch  56: 2.01G
+epoch  57: 2.01G
+epoch  58: 2.01G
+epoch  59: 2.01G
+epoch  60: 2.01G
+epoch  61: 2.01G
+epoch  62: 2.01G
+epoch  63: 2.01G
+epoch  64: 2.01G
+epoch  65: 2.01G
+epoch  66: 2.01G
+epoch  67: 2.01G
+epoch  68: 2.01G
+epoch  69: 2.01G
+epoch  70: 2.01G
+epoch  71: 2.01G
+epoch  72: 2.01G
+epoch  73: 2.01G
+epoch  74: 2.01G
+epoch  75: 2.01G
+epoch  76: 2.01G
+epoch  77: 2.01G
+epoch  78: 2.01G
+epoch  79: 2.01G
+epoch  80: 2.01G
+epoch  81: 2.01G
+epoch  82: 2.01G
+epoch  83: 2.01G
+epoch  84: 2.01G
+epoch  85: 2.01G
+epoch  86: 2.01G
+epoch  87: 2.01G
+epoch  88: 2.01G
+epoch  89: 2.01G
+epoch  90: 2.01G
+epoch  91: 2.01G
+epoch  92: 2.01G
+epoch  93: 2.01G
+epoch  94: 2.01G
+epoch  95: 2.01G
+epoch  96: 2.01G
+epoch  97: 2.01G
+epoch  98: 2.01G
+epoch  99: 2.01G
+epoch 100: 2.01G
+
+## 汇总
+peak_gpu_mem_decimal_gb: 2.01
+peak_epoch: 24
+peak_gpu_mem_approx_gib: 1.872  # GB→GiB 换算，供参考
+gpu_total_gib: 5.997  # RTX 4050 Laptop 6GB（见 ENVIRONMENT）
+epochs_completed_hours: 0.939
+
+## 最终 all 指标（images instances P R mAP50 mAP50-95）
+all: images=97 instances=905 P=0.857 R=0.67 mAP50=0.746 mAP50-95=0.555
+
+## 推理速度
+preprocess=0.8ms inference=5.0ms per image
+
+results_saved_to: [1m/mnt/d/AstraDesk/runs/detect/astradesk_desk_fine[0m
+
+## 结论
+- 全程峰值 GPU_mem 2.01G（十进制）≈ 1.87 GiB，远小于 6GB 硬边界，100 epoch 全程无 OOM。
+- 注：GPU_mem 为 ultralytics 自报十进制 GB（torch.cuda.memory_reserved()/1e9）；单位与数值以本证据为准。

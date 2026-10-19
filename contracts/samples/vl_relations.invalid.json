@@ -1,0 +1,17 @@
+{
+  "relations": [
+    {
+      "subject_id": "obj-1",
+      "predicate": "on_top_of",
+      "object_id": "obj-2"
+    },
+    {
+      "subject_id": "",
+      "predicate": "near",
+      "object_id": "obj-3"
+    }
+  ],
+  "rewritten_facts": {
+    "objects": []
+  }
+}

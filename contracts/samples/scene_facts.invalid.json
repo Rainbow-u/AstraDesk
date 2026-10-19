@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "user_side": "upside",
+  "handedness": "right",
+  "mode": "office",
+  "grid_resolution": 20,
+  "object_count": 1,
+  "objects": [
+    {
+      "object_id": "obj_1",
+      "class_name": "tv",
+      "center": [0.5, 0.5],
+      "area": 1.4,
+      "zone_depth": "middle_earth",
+      "zone_lateral": "center",
+      "fixed": false,
+      "high_frequency": false
+    }
+  ],
+  "zones": { "center_near": "one" },
+  "occupancy": { "occupied_ratio": 2.0 },
+  "continuous_workspace": {
+    "work_region_cells": 10,
+    "largest_empty_rect_ratio": 0.5,
+    "largest_empty_rect_desk": [0.1, 0.1]
+  }
+}

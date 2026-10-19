@@ -1,0 +1,133 @@
+{
+  "run_mode": "real",
+  "weights": "/mnt/d/AstraDesk/weights/yolov10_desk9.pt",
+  "note": "real 模式真实 GPU/CPU 推理，非 mock；全图当桌面为冒烟近似（无用户标定桌面框）",
+  "records": [
+    {
+      "image": "img (1).jpg",
+      "model_name": "yolov10_desk9",
+      "run_mode": "real",
+      "device": "auto",
+      "elapsed_seconds": 1.505,
+      "detections": [
+        {
+          "class_id": 0,
+          "class_name": "laptop",
+          "confidence": 0.934,
+          "source": "yolov10:yolov10_desk9"
+        },
+        {
+          "class_id": 4,
+          "class_name": "book",
+          "confidence": 0.804,
+          "source": "yolov10:yolov10_desk9"
+        }
+      ],
+      "all_names_in_product_vocab": true,
+      "all_source_finetuned": true,
+      "scene_object_count": 2,
+      "description_summary": "桌面共 2 件物品：笔记本电脑(中·近)、书(中·远)。",
+      "description_text_head": "【场景描述】(整理模式：办公；靠用户侧：下侧)"
+    },
+    {
+      "image": "img (10).jpg",
+      "model_name": "yolov10_desk9",
+      "run_mode": "real",
+      "device": "auto",
+      "elapsed_seconds": 0.073,
+      "detections": [
+        {
+          "class_id": 4,
+          "class_name": "book",
+          "confidence": 0.914,
+          "source": "yolov10:yolov10_desk9"
+        },
+        {
+          "class_id": 6,
+          "class_name": "cup",
+          "confidence": 0.909,
+          "source": "yolov10:yolov10_desk9"
+        },
+        {
+          "class_id": 6,
+          "class_name": "cup",
+          "confidence": 0.892,
+          "source": "yolov10:yolov10_desk9"
+        },
+        {
+          "class_id": 4,
+          "class_name": "book",
+          "confidence": 0.879,
+          "source": "yolov10:yolov10_desk9"
+        },
+        {
+          "class_id": 5,
+          "class_name": "pen",
+          "confidence": 0.8,
+          "source": "yolov10:yolov10_desk9"
+        },
+        {
+          "class_id": 4,
+          "class_name": "book",
+          "confidence": 0.487,
+          "source": "yolov10:yolov10_desk9"
+        },
+        {
+          "class_id": 6,
+          "class_name": "cup",
+          "confidence": 0.318,
+          "source": "yolov10:yolov10_desk9"
+        },
+        {
+          "class_id": 5,
+          "class_name": "pen",
+          "confidence": 0.308,
+          "source": "yolov10:yolov10_desk9"
+        }
+      ],
+      "all_names_in_product_vocab": true,
+      "all_source_finetuned": true,
+      "scene_object_count": 8,
+      "description_summary": "桌面共 8 件物品：书(左·近)、杯子(中·中)、杯子(右·近)、书(左·远)、笔(左·近)、书(右·近)、杯子(左·中)、笔(左·近)。",
+      "description_text_head": "【场景描述】(整理模式：办公；靠用户侧：下侧)"
+    },
+    {
+      "image": "img (11).jpg",
+      "model_name": "yolov10_desk9",
+      "run_mode": "real",
+      "device": "auto",
+      "elapsed_seconds": 0.017,
+      "detections": [
+        {
+          "class_id": 0,
+          "class_name": "laptop",
+          "confidence": 0.929,
+          "source": "yolov10:yolov10_desk9"
+        },
+        {
+          "class_id": 6,
+          "class_name": "cup",
+          "confidence": 0.899,
+          "source": "yolov10:yolov10_desk9"
+        },
+        {
+          "class_id": 4,
+          "class_name": "book",
+          "confidence": 0.885,
+          "source": "yolov10:yolov10_desk9"
+        },
+        {
+          "class_id": 3,
+          "class_name": "mouse",
+          "confidence": 0.824,
+          "source": "yolov10:yolov10_desk9"
+        }
+      ],
+      "all_names_in_product_vocab": true,
+      "all_source_finetuned": true,
+      "scene_object_count": 4,
+      "description_summary": "桌面共 4 件物品：笔记本电脑(中·近)、杯子(右·近)、书(左·远)、鼠标(右·近)。",
+      "description_text_head": "【场景描述】(整理模式：办公；靠用户侧：下侧)"
+    }
+  ]
+}

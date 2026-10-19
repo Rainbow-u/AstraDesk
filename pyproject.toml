@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "astradesk"
+version = "0.1.0"
+description = "桌面智能整理 - 后端与算法包（A 布局基线 / B MVP）"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+    "pydantic>=2.6",
+    "sqlalchemy>=2.0",
+    "python-multipart>=0.0.9",
+    "pillow>=10.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "httpx>=0.27", "jsonschema>=4.21"]
+vision = ["torch>=2.2", "ultralytics>=8.2"]
+
+[tool.setuptools]
+packages = [
+    "services",
+    "services.api",
+    "services.worker",
+    "packages",
+    "packages.vision",
+    "packages.layout",
+    "packages.generation",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

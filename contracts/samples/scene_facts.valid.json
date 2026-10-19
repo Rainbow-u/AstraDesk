@@ -1,0 +1,402 @@
+{
+  "schema_version": "1.0",
+  "user_side": "bottom",
+  "handedness": "right",
+  "mode": "office",
+  "grid_resolution": 20,
+  "object_count": 6,
+  "objects": [
+    {
+      "object_id": "obj_laptop_1",
+      "class_id": 0,
+      "class_name": "laptop",
+      "center": [
+        0.5,
+        0.725
+      ],
+      "area": 0.14,
+      "zone_depth": "near",
+      "zone_lateral": "center",
+      "fixed": true,
+      "high_frequency": false,
+      "source": "yolov10:yolov10_desk_fine",
+      "attributes": {
+        "color": {
+          "name": "灰",
+          "rgb": [
+            70,
+            72,
+            75
+          ],
+          "hsv": [
+            216.0,
+            0.067,
+            0.294
+          ]
+        },
+        "aspect_ratio": 1.1429,
+        "orientation": "square",
+        "size_class": "large",
+        "semantic": {
+          "status": "blocked",
+          "material": null,
+          "open_state": null,
+          "fill_level": null,
+          "precise_orientation": null
+        }
+      }
+    },
+    {
+      "object_id": "obj_mouse_1",
+      "class_id": 3,
+      "class_name": "mouse",
+      "center": [
+        0.79,
+        0.77
+      ],
+      "area": 0.01,
+      "zone_depth": "near",
+      "zone_lateral": "right",
+      "fixed": false,
+      "high_frequency": true,
+      "source": "yolov10:yolov10_desk_fine",
+      "attributes": {
+        "color": {
+          "name": "白",
+          "rgb": [
+            238,
+            238,
+            240
+          ],
+          "hsv": [
+            240.0,
+            0.008,
+            0.941
+          ]
+        },
+        "aspect_ratio": 1.0,
+        "orientation": "square",
+        "size_class": "small",
+        "semantic": {
+          "status": "blocked",
+          "material": null,
+          "open_state": null,
+          "fill_level": null,
+          "precise_orientation": null
+        }
+      }
+    },
+    {
+      "object_id": "obj_cup_1",
+      "class_id": 7,
+      "class_name": "cup",
+      "center": [
+        0.14,
+        0.66
+      ],
+      "area": 0.0096,
+      "zone_depth": "mid",
+      "zone_lateral": "left",
+      "fixed": false,
+      "high_frequency": false,
+      "source": "yolo-world",
+      "attributes": {
+        "color": {
+          "name": "蓝",
+          "rgb": [
+            35,
+            95,
+            175
+          ],
+          "hsv": [
+            214.3,
+            0.8,
+            0.686
+          ]
+        },
+        "aspect_ratio": 0.6667,
+        "orientation": "portrait",
+        "size_class": "small",
+        "semantic": {
+          "status": "blocked",
+          "material": null,
+          "open_state": null,
+          "fill_level": null,
+          "precise_orientation": null
+        }
+      }
+    },
+    {
+      "object_id": "obj_book_1",
+      "class_id": 5,
+      "class_name": "book",
+      "center": [
+        0.18,
+        0.17
+      ],
+      "area": 0.0224,
+      "zone_depth": "far",
+      "zone_lateral": "left",
+      "fixed": false,
+      "high_frequency": false,
+      "source": "yolov10:yolov10_desk_fine",
+      "attributes": {
+        "color": {
+          "name": "红",
+          "rgb": [
+            176,
+            42,
+            55
+          ],
+          "hsv": [
+            354.2,
+            0.761,
+            0.69
+          ]
+        },
+        "aspect_ratio": 1.1429,
+        "orientation": "square",
+        "size_class": "medium",
+        "semantic": {
+          "status": "blocked",
+          "material": null,
+          "open_state": null,
+          "fill_level": null,
+          "precise_orientation": null
+        }
+      }
+    },
+    {
+      "object_id": "obj_book_2",
+      "class_id": 5,
+      "class_name": "book",
+      "center": [
+        0.35,
+        0.18
+      ],
+      "area": 0.0196,
+      "zone_depth": "far",
+      "zone_lateral": "center",
+      "fixed": false,
+      "high_frequency": false,
+      "source": "yolov10:yolov10_desk_fine",
+      "attributes": {
+        "color": {
+          "name": "绿",
+          "rgb": [
+            46,
+            140,
+            70
+          ],
+          "hsv": [
+            135.3,
+            0.671,
+            0.549
+          ]
+        },
+        "aspect_ratio": 1.0,
+        "orientation": "square",
+        "size_class": "small",
+        "semantic": {
+          "status": "blocked",
+          "material": null,
+          "open_state": null,
+          "fill_level": null,
+          "precise_orientation": null
+        }
+      }
+    },
+    {
+      "object_id": "obj_pen_1",
+      "class_id": 6,
+      "class_name": "pen",
+      "center": [
+        0.52,
+        0.225
+      ],
+      "area": 0.006,
+      "zone_depth": "far",
+      "zone_lateral": "center",
+      "fixed": false,
+      "high_frequency": false,
+      "source": "yolo-world",
+      "attributes": {
+        "color": {
+          "name": "黄",
+          "rgb": [
+            225,
+            190,
+            30
+          ],
+          "hsv": [
+            49.2,
+            0.867,
+            0.882
+          ]
+        },
+        "aspect_ratio": 0.2667,
+        "orientation": "portrait",
+        "size_class": "small",
+        "semantic": {
+          "status": "blocked",
+          "material": null,
+          "open_state": null,
+          "fill_level": null,
+          "precise_orientation": null
+        }
+      }
+    }
+  ],
+  "zones": {
+    "center_near": 1,
+    "right_near": 1,
+    "left_mid": 1,
+    "left_far": 1,
+    "center_far": 2
+  },
+  "occupancy": {
+    "occupied_ratio": 0.205,
+    "free_ratio": 0.795
+  },
+  "continuous_workspace": {
+    "work_region_cells": 91,
+    "largest_empty_rect_ratio": 0.3077,
+    "largest_empty_rect_desk": [
+      0.3,
+      0.35,
+      0.65,
+      0.55
+    ]
+  },
+  "grouping": {
+    "clusters": [
+      {
+        "class_name": "book",
+        "count": 2,
+        "object_ids": [
+          "obj_book_1",
+          "obj_book_2"
+        ],
+        "centroid": [
+          0.265,
+          0.175
+        ]
+      },
+      {
+        "class_name": "cup",
+        "count": 1,
+        "object_ids": [
+          "obj_cup_1"
+        ],
+        "centroid": [
+          0.14,
+          0.66
+        ]
+      },
+      {
+        "class_name": "laptop",
+        "count": 1,
+        "object_ids": [
+          "obj_laptop_1"
+        ],
+        "centroid": [
+          0.5,
+          0.725
+        ]
+      },
+      {
+        "class_name": "mouse",
+        "count": 1,
+        "object_ids": [
+          "obj_mouse_1"
+        ],
+        "centroid": [
+          0.79,
+          0.77
+        ]
+      },
+      {
+        "class_name": "pen",
+        "count": 1,
+        "object_ids": [
+          "obj_pen_1"
+        ],
+        "centroid": [
+          0.52,
+          0.225
+        ]
+      }
+    ],
+    "functional_groups": [
+      {
+        "group": "electronics",
+        "count": 2,
+        "avg_pairwise_distance": 0.2935,
+        "grouping_score": 0.7925,
+        "object_ids": [
+          "obj_laptop_1",
+          "obj_mouse_1"
+        ]
+      },
+      {
+        "group": "writing",
+        "count": 3,
+        "avg_pairwise_distance": 0.2302,
+        "grouping_score": 0.8372,
+        "object_ids": [
+          "obj_book_1",
+          "obj_book_2",
+          "obj_pen_1"
+        ]
+      },
+      {
+        "group": "drinkware",
+        "count": 1,
+        "avg_pairwise_distance": null,
+        "grouping_score": null,
+        "object_ids": [
+          "obj_cup_1"
+        ]
+      }
+    ],
+    "grouping_score": 0.8149
+  },
+  "alignment": {
+    "mean_edge_deviation": 0.0947,
+    "alignment_score": 0.4317,
+    "reference_lines": [
+      0.0,
+      0.3333,
+      0.6667,
+      1.0
+    ]
+  },
+  "accessibility": {
+    "user_anchor": [
+      0.62,
+      0.85
+    ],
+    "mouse_side": "right",
+    "high_frequency_items": [
+      {
+        "object_id": "obj_mouse_1",
+        "class_name": "mouse",
+        "distance_to_user_region": 0.1329
+      }
+    ],
+    "accessibility_score": 0.8671
+  },
+  "h07_separation": {
+    "applicable": true,
+    "min_distance": 0.12,
+    "threshold": 0.04,
+    "drink_object_id": "obj_cup_1",
+    "electronics_object_id": "obj_laptop_1",
+    "separated": true
+  },
+  "density": {
+    "object_count": 6,
+    "occupied_ratio": 0.205,
+    "fixed_count": 1
+  }
+}

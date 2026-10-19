@@ -1,0 +1,6 @@
+{
+  "status": "blocked",
+  "reason": "data/eval_raw 无用户照片（仅投放说明）；Track2 依赖用户冻结集，外部阻塞。",
+  "photos_found": 0,
+  "note": "请把真实(尽量凌乱)桌面照片放入 data/eval_raw/ 后重跑本脚本；照片本地、gitignore、绝不参与训练/调参。"
+}

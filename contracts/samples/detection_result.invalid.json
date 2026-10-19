@@ -1,0 +1,15 @@
+{
+  "id": "job_invalid_01",
+  "project_id": "proj_01",
+  "type": "detect",
+  "status": "done",
+  "detections": [
+    {
+      "id": "det_01",
+      "class_id": 0,
+      "class_name": "laptop",
+      "confidence": 1.7,
+      "bbox_image": [0.12, 0.3, 0.55]
+    }
+  ]
+}

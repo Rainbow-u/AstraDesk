@@ -1,0 +1,31 @@
+# T00 环境探测原始记录（证据）
+
+采集时间：2026-10-11
+采集方式：Windows PowerShell + WSL bash 探测；本文件仅含版本号与可用性，无任何密钥值。
+
+## Windows 侧（编辑端）
+- OS：Windows 25H2
+- Python：3.14.5（`python --version` / `py --version`）
+- PyTorch：未安装（`import torch` 失败）
+- Node：v24.19.0；npm：11.17.0
+- Git：2.54.0.windows.1
+- GPU：NVIDIA GeForce RTX 4050 Laptop，6141 MiB 显存，驱动 592.00
+- 磁盘：D 盘 已用约 377.6 GB / 剩余约 61.8 GB
+- 密钥：环境变量中无 OPENAI/QWEN/DASHSCOPE/HF/API_KEY/TOKEN/SECRET 匹配项；仓库无 .env* 文件 → 未配置
+- Git 仓库：未初始化（fatal: not a git repository）
+
+## WSL2 侧（拟定服务运行端）
+- 发行版：Ubuntu 24.04.4 LTS；内核 6.6.87.2-microsoft-standard-WSL2（WSL 2）
+- python3：3.12.3（/usr/bin/python3）
+- pip：缺失（No module named pip）
+- venv：可用（import venv ok）
+- node：WSL 内未安装（which node 空）
+- GPU 直通：WSL 内 nvidia-smi 正常，识别 RTX 4050 Laptop，6141 MiB，驱动 592.00
+- CUDA toolkit：nvcc 未安装（command not found）
+- WSL 根文件系统磁盘：/dev/sdd 1007G，已用 2.2G，剩余 954G（虚拟磁盘，实际占用取决于宿主盘）
+
+## 与章程基线的差异
+1. WSL python3 为 3.12.3，落在章程期望的 3.10–3.12 区间内（章程原写"T02 前确定"，此处已实测）。
+2. WSL 内缺 pip、缺 node、缺 nvcc（CUDA toolkit）。
+3. 存储：WSL 虚拟盘剩余 954G，远大于 Windows D 盘 61.8G；权重存放位置需决策。
+4. 密钥、授权照片、外部服务：均未配置/未提供。

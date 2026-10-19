@@ -1,0 +1,50 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Node / 前端 ---
+node_modules/
+dist/
+build/
+.vite/
+
+# --- 密钥与本地配置（仅保留占位样例） ---
+.env
+.env.*
+!.env.example
+
+# --- 数据与权重：本地管理，不入库（保留目录结构） ---
+data/*
+!data/images/
+!data/exports/
+data/images/*
+!data/images/.gitkeep
+data/exports/*
+!data/exports/.gitkeep
+weights/*
+!weights/.gitkeep
+*.pt
+*.pth
+*.onnx
+*.safetensors
+*.ckpt
+*.bin
+
+# --- 运行证据中的敏感内容（图片/大文件）不入库，保留文本记录 ---
+artifacts/**/*.png
+artifacts/**/*.jpg
+artifacts/**/*.jpeg
+
+# --- 数据库与临时文件 ---
+*.db
+*.sqlite
+*.sqlite3
+*.log
+.DS_Store
+Thumbs.db
